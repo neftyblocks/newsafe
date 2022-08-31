@@ -14,8 +14,7 @@ import SidebarContainer from './Sidebar';
 import { setWalletMode } from '../../../shared/actions/wallet';
 import * as ValidateActions from '../../../shared/actions/validate';
 
-import anchorLogo from '../../../renderer/assets/images/anchor-logo.svg';
-import anchorText from '../../../renderer/assets/images/anchor-text.svg';
+import logo from '../../../renderer/assets/images/newcoin.svg';
 
 const { ipcRenderer } = require('electron');
 
@@ -69,22 +68,14 @@ class MainIndexContainer extends Component<Props> {
           <Grid.Column>
             <Segment basic style={{ marginTop: 0 }}>
               <Image
-                alt="Anchor Logo"
+                alt="Newsafe Logo"
                 centered
-                src={anchorLogo}
+                src={logo}
                 style={{
                   width: '256px',
                 }}
               />
-              <Image
-                alt="Anchor"
-                centered
-                src={anchorText}
-                style={{
-                  width: '256px',
-                  marginTop: '1em',
-                }}
-              />
+              <h1 style={{ color: 'white', marginTop: '1em', width: '256px' }}>Newsafe</h1>
             </Segment>
             Loading...
           </Grid.Column>

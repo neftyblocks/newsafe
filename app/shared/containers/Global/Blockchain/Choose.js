@@ -17,16 +17,18 @@ import { setSetting } from '../../../actions/settings';
 import GlobalBlockchainDropdown from './Dropdown';
 
 const featuredChains = [
-  // EOS
-  'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
-  // FIO
-  '21dcae42c0182200e93f954a074011f9048a7624c6fe81d3c9541a614a88bd1c',
-  // TELOS
-  '4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11',
-  // PROTON
-  '384da888112027f0321850a169f737c33e53b388aad48b5adace4bab97f437e0',
-  // WAX
-  '1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4',
+  // NEWCOIN
+  'add7deb61981d83563f2c09f266acbfa48153f14453639b4a6259c4c8225d0e7',
+  // // EOS
+  // 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
+  // // FIO
+  // '21dcae42c0182200e93f954a074011f9048a7624c6fe81d3c9541a614a88bd1c',
+  // // TELOS
+  // '4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11',
+  // // PROTON
+  // '384da888112027f0321850a169f737c33e53b388aad48b5adace4bab97f437e0',
+  // // WAX
+  // '1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4',
 ];
 
 class GlobalBlockchainChoose extends Component<Props> {
@@ -57,6 +59,7 @@ class GlobalBlockchainChoose extends Component<Props> {
       showTestnets
     } = this.state;
     const featured = blockchains.filter(b => featuredChains.includes(b.chainId));
+    // TODO: choose
     return (
       <Segment style={{ marginTop: 0 }}>
         <Header
@@ -90,7 +93,7 @@ class GlobalBlockchainChoose extends Component<Props> {
               </Card>
             ))}
           </Card.Group>
-          <Form style={{ marginTop: '3em' }}>
+          {/* <Form style={{ marginTop: '3em' }}>
             <Header size="small">
               More options available in the dropdown below.
             </Header>
@@ -117,7 +120,7 @@ class GlobalBlockchainChoose extends Component<Props> {
                 onClick={this.goBack}
               />
             </Form.Field>
-          </Form>
+          </Form> */}
         </Segment>
       </Segment>
     );

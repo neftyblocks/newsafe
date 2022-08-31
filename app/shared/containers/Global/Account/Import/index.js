@@ -118,13 +118,15 @@ class GlobalAccountImport extends Component<Props> {
         >
           <Header
             size="large"
+            style={{ display: 'flex', alignItems: 'center' }}
           >
             <GlobalFragmentChainLogo
               chainId={connection.chainId}
               noPopup
               size="medium"
               style={{
-                verticalAlign: 'top'
+                verticalAlign: 'top',
+                maxHeight: '3em',
               }}
             />
             <Header.Content>

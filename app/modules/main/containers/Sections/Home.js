@@ -85,6 +85,7 @@ class HomeContainer extends Component<Props> {
         {interrupt}
         <HashRouter>
           <Switch>
+            {/* TODO: main route  */}
             <Route exact path="/" component={OverviewContainer} />
             <Route path="/home/account/backup/:chain_id/:account_name/:first_account?" component={AccountSetupBackup} />
             <Route path="/home/account/code" component={AccountSetupCode} />

@@ -106,14 +106,14 @@ class GlobalBlockchainEnable extends Component<Props> {
           onClick={this.complete}
           primary={(chainCount !== 0)}
         />
-        <Button
+        {/* <Button
           chainId="new"
           content={t('global_blockchain_enable_button_two')}
           floated="right"
           icon="circle plus"
           onClick={this.props.onEdit}
-        />
-        <GlobalBlockchainResync />
+        /> */}
+        {/* <GlobalBlockchainResync /> */}
         <Table verticalAlign="middle" unstackable>
           <Table.Header>
             <Table.Row>

@@ -1,4 +1,5 @@
 {
+  "editor.formatOnSave": false,
   "javascript.validate.enable": false,
   "flow.useNPMPackagedFlow": true,
   "search.exclude": {

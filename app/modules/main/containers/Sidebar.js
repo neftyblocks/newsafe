@@ -8,8 +8,7 @@ import { withTranslation } from 'react-i18next';
 import { Header, Icon, Image, Label, Menu } from 'semantic-ui-react';
 import { find } from 'lodash';
 
-import Logo from '../../../renderer/assets/images/anchor-logo-blue.svg';
-import AnchorTextHorizontal from '../../../renderer/assets/images/anchor-text-white.svg';
+import Logo from '../../../renderer/assets/images/newcoin.svg';
 
 import packageJson from '../../../package.json';
 import { clearSystemState } from '../../../shared/actions/system/systemstate';
@@ -104,16 +103,7 @@ class SidebarContainer extends Component<Props> {
           />
           {(!settings.sidebarCollapsed)
             ? (
-              <Image
-                src={AnchorTextHorizontal}
-                style={{
-                  display: 'inline-block',
-                  fill: 'currentColor',
-                  marginLeft: '0.5em',
-                  maxWidth: ((settings.sidebarCollapsed) ? '3em' : '7em'),
-                  width: ((settings.sidebarCollapsed) ? '3em' : '7em')
-                }}
-              />
+              <h1 style={{ color: 'white' }}>Newsafe</h1>
             )
             : false
           }

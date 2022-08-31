@@ -1,6 +1,6 @@
 {
-  "appId": "com.greymass.anchordesktop.release",
-  "productName": "Anchor Wallet",
+  "appId": "org.newcoin.newsafedesktop.release",
+  "productName": "Newsafe",
   "afterSign": "internals/macos/notarize.js",
   "artifactName": "${os}-${name}-${version}-${arch}.${ext}",
   "asar": true,
@@ -35,9 +35,9 @@
     "category": "Network",
     "description": "An EOSIO Light Wallet with simple tools for basic activities and advanced tools for power users.",
     "desktop": {
-      "Name": "anchor-wallet",
-      "GenericName": "Anchor - EOSIO Desktop Wallet",
-      "X-GNOME-FullName": "anchor-wallet",
+      "Name": "newsafe-wallet",
+      "GenericName": "Newsafe - Newcoin Desktop Wallet",
+      "X-GNOME-FullName": "newsafe-wallet",
       "Comment": "An EOSIO Light Wallet with simple tools for basic activities and advanced tools for power users.",
       "Type": "Application",
       "Terminal": "false",
@@ -131,6 +131,6 @@
     "deleteAppDataOnUninstall": true,
     "oneClick": false,
     "perMachine": true,
-    "shortcutName": "Anchor Wallet"
+    "shortcutName": "Newsafe Wallet"
   }
 }

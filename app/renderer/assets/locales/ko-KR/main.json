@@ -67,6 +67,7 @@
   "main_sections_home_initialize_paragraph_one": "EOSIO 지갑 및 Authenticator",
   "main_sections_home_initialize_button_one": "계정 설정",
   "main_sections_home_initialize_card_description_one": "Anchor 백업을 갖고 계신가요?",
+  "main_sections_home_initialize_card_description_signup": "아직 계정이 없으신가요?",
   "main_sections_home_initialize_card_content_one": "고급 설정...",
   "main_sections_home_signing_request_prompt_header_one": "Anchor와 앱 결합을 허용하시겠어요?",
   "main_sections_home_signing_request_prompt_paragraph_one": "앱 결합을 허용하면 지원하는 모든 애플리케이션에서 데스크톱 Anchor 지갑을 이용하여 로그인할 수 있습니다.",

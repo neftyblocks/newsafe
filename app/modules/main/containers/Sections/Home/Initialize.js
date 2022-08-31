@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Accordion, Button, Card, Divider, Icon, Image, Message, Segment } from 'semantic-ui-react';
 import compose from 'lodash/fp/compose';
+import { shell } from 'electron';
 
 import { clearValidationState } from '../../../../../shared/actions/validate';
 import { initApp } from '../../../../../shared/actions/app';
@@ -32,6 +33,11 @@ class HomeInitializeContainer extends Component<Props> {
     history.push('/home/password');
     return false;
   }
+
+  openNewlife = () => {
+    shell.openExternal('https://newlife.io');
+  }
+
   useColdWallet = (e) => {
     const {
       actions,
@@ -62,15 +68,16 @@ class HomeInitializeContainer extends Component<Props> {
           style={{ margin: 0 }}
           textAlign="center"
         >
-          <Image
-            alt="Anchor"
+          {/* <Image
+            alt="Newsafe"
             centered
             src={LogoText}
             style={{
               margin: '2em auto 1em',
               width: '192px',
             }}
-          />
+          /> */}
+          <h1>Newsafe</h1>
           <p>{t('main_sections_home_initialize_paragraph_one')}</p>
         </Segment>
         <Segment basic textAlign="center" style={{ margin: 0 }}>
@@ -81,13 +88,17 @@ class HomeInitializeContainer extends Component<Props> {
               size="huge"
               style={{
                 color: '#fff',
-                backgroundColor: '#3650A2'
+                backgroundColor: '#000'
               }}
             />
           </p>
           <Card centered raised style={{ marginTop: '1em' }}>
             <Card.Content>
               <Card.Description style={{ marginBottom: '1em' }}>
+                {t('main_sections_home_initialize_card_description_signup')}
+              </Card.Description>
+              <Button content="Get an account" icon="address card" primary onClick={this.openNewlife} />
+              <Card.Description style={{ margin: '1em' }}>
                 {t('main_sections_home_initialize_card_description_one')}
               </Card.Description>
               <WelcomeImportContainer />

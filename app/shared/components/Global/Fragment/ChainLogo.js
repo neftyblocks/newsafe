@@ -20,6 +20,7 @@ import telosLogo from '../../../../renderer/assets/images/telos.png';
 import uxLogo from '../../../../renderer/assets/images/ux.png';
 import worbliLogo from '../../../../renderer/assets/images/worbli.png';
 import waxLogo from '../../../../renderer/assets/images/wax.png';
+import newcoinLogo from '../../../../renderer/assets/images/newcoin_black.svg';
 
 const logos = {
   'b912d19a6abd2b1b05611ae5be473355d64d95aeff0c09bedc8c166cd6468fe4': beosLogo, // mainnet (beos)
@@ -46,6 +47,7 @@ const logos = {
   '73647cde120091e0a4b85bced2f3cfdb3041e266cbbe95cee59b73235a1b3b6f': worbliLogo, // mainnet (worbli)
   '1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4': waxLogo, // mainnet (wax)
   'f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12': waxLogo,
+  'add7deb61981d83563f2c09f266acbfa48153f14453639b4a6259c4c8225d0e7': newcoinLogo, // testnet (newcoin)
 };
 
 export class GlobalFragmentChainLogo extends PureComponent<Props> {
