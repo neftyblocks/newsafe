@@ -9,12 +9,12 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest, windows-2019]
         include:
           - os: ubuntu-latest
             cmd: package-linux
             ext: deb
-          - os: windows-latest
+          - os: windows-2019
             cmd: package-win
             ext: exe
           - os: macos-latest
@@ -29,11 +29,16 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: 14
-      - if: ${{ matrix.os == 'ubuntu-latest' }}
+      - if: startsWith(matrix.os, 'ubuntu')
         name: Install linux dependencies
         run: |
           sudo apt update 
           sudo apt install pkg-config libudev-dev libusb-1.0-0-dev
+      - name: Set Windows environment
+        if: startsWith(matrix.os, 'windows')
+        run: |
+          echo 'GYP_MSVS_VERSION=2015' >> $Env:GITHUB_ENV
+          echo 'GYP_MSVS_OVERRIDE_PATH=C:\\Dummy' >> $Env:GITHUB_ENV
       - name: Install main packages. Some native modules might fail!
         run: yarn --frozen-lockfile
         continue-on-error: true
