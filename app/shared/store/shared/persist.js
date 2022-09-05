@@ -4,7 +4,7 @@ import createElectronStorage from 'redux-persist-electron-storage';
 const migrations = {};
 
 const persistConfig = {
-  key: 'anchor-config',
+  key: 'newsafe-config',
   version: 1,
   migrate: createMigrate(migrations, { debug: true }),
   storage: createElectronStorage(),
