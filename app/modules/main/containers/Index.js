@@ -14,7 +14,7 @@ import SidebarContainer from './Sidebar';
 import { setWalletMode } from '../../../shared/actions/wallet';
 import * as ValidateActions from '../../../shared/actions/validate';
 
-import logo from '../../../renderer/assets/images/newcoin.svg';
+import logo from '../../../renderer/assets/images/newsafe_white.svg';
 
 const { ipcRenderer } = require('electron');
 

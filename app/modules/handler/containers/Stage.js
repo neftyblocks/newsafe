@@ -620,7 +620,7 @@ class PromptStage extends Component<Props> {
           }
           {(wallet && wallet.mode === 'watch' && reqType !== 'identity')
             ? (
-              <Segment color="orange" style={{ margin: 0 }}>
+              <Segment color="grey" style={{ margin: 0 }}>
                 <Header size="large">
                   <Icon name="clock" />
                   <Header.Content>

@@ -55,7 +55,7 @@ class PromptActionDownload extends Component<Props> {
           </Header>
         </Label>
         <Button
-          color="orange"
+          color="grey"
           icon
           loading={loading}
           style={{ position: 'relative' }}

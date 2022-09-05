@@ -27,7 +27,7 @@ class PromptActionBroadcast extends Component<Props> {
             </Header.Content>
           </Header>
         )}
-        color="orange"
+        color="grey"
         disabled={disabled}
         floated="right"
         loading={loading}

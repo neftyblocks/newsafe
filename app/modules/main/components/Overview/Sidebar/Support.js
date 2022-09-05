@@ -6,7 +6,7 @@ import { withTranslation } from 'react-i18next';
 const { shell } = require('electron');
 
 class OverviewSidebarSupport extends PureComponent<Props> {
-  openLink = () => shell.openExternal('https://support.greymass.com')
+  openLink = () => shell.openExternal('https://newlife.io')
   render() {
     const { t } = this.props;
     return (

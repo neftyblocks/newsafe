@@ -18,7 +18,7 @@ class OverviewSidebarPrompt extends PureComponent<Props> {
   render() {
     const { settings, t } = this.props;
     return (
-      <Segment attached="top" color="orange" textAlign="center">
+      <Segment attached="top" color="grey" textAlign="center">
         <Header size="tiny">
           <Header.Subheader>
             {t('main_components_overview_sidebar_prompt_subheader')}
@@ -26,7 +26,7 @@ class OverviewSidebarPrompt extends PureComponent<Props> {
           {t('main_components_overview_sidebar_prompt_header')}
         </Header>
         <Button
-          color={(settings.allowSigningRequests) ? 'orange' : 'green'}
+          color={(settings.allowSigningRequests) ? 'grey' : 'green'}
           content={(settings.allowSigningRequests) ?
             t('main_components_overview_sidebar_prompt_button_disable') :
             t('main_components_overview_sidebar_prompt_button_enable')}

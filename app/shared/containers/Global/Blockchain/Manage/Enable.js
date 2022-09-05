@@ -162,7 +162,7 @@ class GlobalBlockchainEnable extends Component<Props> {
                   ? (
                     <Table.Cell collapsing>
                       {(b.testnet)
-                        ? <Label color="orange">Testnet</Label>
+                        ? <Label color="grey">Testnet</Label>
                         : <Label color="green">Mainnet</Label>
                       }
                     </Table.Cell>
