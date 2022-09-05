@@ -1,9 +1,9 @@
 name: build-application
 on:
+  pull_request:
   push:
     branches:
-      - 'main'
-      - 'feature/actions'
+      - master
 
 jobs:
   build:
@@ -21,7 +21,6 @@ jobs:
             cmd: package-mac
             ext: dmg
     runs-on: ${{ matrix.os }}
-    continue-on-error: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -41,7 +40,6 @@ jobs:
           echo 'GYP_MSVS_OVERRIDE_PATH=C:\\Dummy' >> $Env:GITHUB_ENV
       - name: Install main packages. Some native modules might fail!
         run: yarn --frozen-lockfile
-        continue-on-error: true
       - run: yarn build-dll
       - run: cd app && yarn --frozen-lockfile
       - run: cd ..
