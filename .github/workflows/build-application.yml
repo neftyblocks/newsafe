@@ -1,0 +1,51 @@
+name: build-application
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-2019]
+        include:
+          - os: ubuntu-latest
+            cmd: package-linux
+            ext: deb
+          - os: windows-2019
+            cmd: package-win
+            ext: exe
+          - os: macos-latest
+            cmd: package-mac
+            ext: dmg
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup node 14
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 14
+      - if: startsWith(matrix.os, 'ubuntu')
+        name: Install linux dependencies
+        run: |
+          sudo apt update 
+          sudo apt install pkg-config libudev-dev libusb-1.0-0-dev
+      - name: Set Windows environment
+        if: startsWith(matrix.os, 'windows')
+        run: |
+          echo 'GYP_MSVS_VERSION=2015' >> $Env:GITHUB_ENV
+          echo 'GYP_MSVS_OVERRIDE_PATH=C:\\Dummy' >> $Env:GITHUB_ENV
+      - name: Install main packages. Some native modules might fail!
+        run: yarn --frozen-lockfile
+      - run: yarn build-dll
+      - run: cd app && yarn --frozen-lockfile
+      - run: cd ..
+      - run: yarn ${{ matrix.cmd }}
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.cmd }}
+          path: release/*.${{ matrix.ext }}
