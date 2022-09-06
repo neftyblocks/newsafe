@@ -28,6 +28,7 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: 14
+          cache: 'yarn'
       - if: startsWith(matrix.os, 'ubuntu')
         name: Install linux dependencies
         run: |
