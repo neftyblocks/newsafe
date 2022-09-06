@@ -21,14 +21,12 @@ class OverviewMenu extends Component<Props> {
         <Menu.Item
           active={view === 'systemtokens'}
           content={t('main_components_overview_menu_item_one')}
-          icon="cube"
           name="systemtokens"
           onClick={viewChange}
         />
         <Menu.Item
           active={view === 'balances'}
           content={t('main_components_overview_menu_item_two')}
-          icon="cubes"
           name="balances"
           onClick={viewChange}
         />
@@ -37,7 +35,6 @@ class OverviewMenu extends Component<Props> {
             <Menu.Item
               active={view === 'resources'}
               content={t('main_components_overview_menu_item_three')}
-              icon="battery full"
               name="resources"
               onClick={viewChange}
             />
@@ -47,7 +44,6 @@ class OverviewMenu extends Component<Props> {
         <Menu.Item
           active={view === 'governance'}
           content={t('main_components_overview_menu_item_four')}
-          icon="gavel"
           name="governance"
           onClick={viewChange}
         />

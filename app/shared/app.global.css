@@ -4,7 +4,7 @@
   font-family: 'ABC Whyte';
   font-style: normal;
   font-weight: 400;
-  src: local(''), url('../renderer/assets/fonts/ABCWhyte-Regular.woff') format('woff');
+  src: local(''), url('../renderer/assets/fonts/ABCWhyte-Light.woff') format('woff');
 }
 
 /* dm-sans-500 - latin */
@@ -13,7 +13,7 @@
   font-family: 'ABC Whyte';
   font-style: normal;
   font-weight: 500;
-  src: local(''), url('../renderer/assets/fonts/ABCWhyte-Medium.woff') format('woff');
+  src: local(''), url('../renderer/assets/fonts/ABCWhyte-Regular.woff') format('woff');
 }
 
 /* dm-sans-700 - latin */
@@ -22,14 +22,14 @@
   font-family: 'ABC Whyte';
   font-style: normal;
   font-weight: 700;
-  src: local(''), url('../renderer/assets/fonts/ABCWhyte-Bold.woff') format('woff');
+  src: local(''), url('../renderer/assets/fonts/ABCWhyte-Medium.woff') format('woff');
 }
 
 
 @import url("../../semantic/dist/semantic.min.css");
 
 body {
-  background: #f1f0ee;
+  background: #ffffff;
 }
 
 span.nil {

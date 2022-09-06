@@ -197,14 +197,12 @@ class OverviewContainer extends Component<Props> {
                       <React.Fragment>
                         <Button
                           content={t('main_sections_overview_container_button_accounts')}
-                          icon="users"
                           onClick={() => this.refreshAccounts(true)}
                           primary
                         />
                         <Button
                           basic
                           content={t('main_sections_overview_container_button')}
-                          icon="users"
                           onClick={() => this.props.actions.changeModule('manage/wallets')}
                           primary
                         />

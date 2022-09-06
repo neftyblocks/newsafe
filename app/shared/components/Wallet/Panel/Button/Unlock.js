@@ -40,7 +40,7 @@ class WalletPanelButtonUnlock extends Component<Props> {
       validate
     } = this.props;
     const styles = Object.assign({}, {
-      color: 'purple',
+      color: 'black',
       content: t('wallet_panel_wallet_unlock'),
       icon: 'unlock',
     }, buttonStyles);
@@ -57,7 +57,7 @@ class WalletPanelButtonUnlock extends Component<Props> {
         settings={settings}
         trigger={(
           <Button
-            color="purple"
+            color="black"
             content={styles.content}
             fluid={styles.fluid}
             floated={styles.floated}

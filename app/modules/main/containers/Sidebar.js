@@ -94,13 +94,15 @@ class SidebarContainer extends Component<Props> {
             display: 'flex',
             alignItems: 'center',
             gap: '1em',
+            marginTop: '2em',
+            marginBottom: '2em',
           }}
         >
           <Image
             src={Logo}
             style={{
               display: 'inline-block',
-              width: ((settings.sidebarCollapsed) ? '4.5em' : '5.5em'),
+              width: ((settings.sidebarCollapsed) ? '4.5em' : '3.5em'),
             }}
           />
           {(!settings.sidebarCollapsed)
@@ -122,7 +124,6 @@ class SidebarContainer extends Component<Props> {
                 color,
               }}
             >
-              <Icon name="home" />
               {(!settings.sidebarCollapsed)
                 ? <p>{t(inSetup ? 'setup' : 'home')}</p>
                 : false
@@ -182,7 +183,6 @@ class SidebarContainer extends Component<Props> {
                   color,
                 }}
               >
-                <Icon name="id card" />
                 {(!settings.sidebarCollapsed)
                   ? <p>{t('wallet')}</p>
                   : false
@@ -200,7 +200,6 @@ class SidebarContainer extends Component<Props> {
                       color,
                     }}
                   >
-                    <Icon name="tachometer alternate" />
                     {(!settings.sidebarCollapsed)
                       ? <p>{t('resources')}</p>
                       : false
@@ -219,8 +218,7 @@ class SidebarContainer extends Component<Props> {
                   color,
                 }}
               >
-                <Icon name="balance" />
-                {(!settings.sidebarCollapsed)
+               {(!settings.sidebarCollapsed)
                   ? <p>{t('governance')}</p>
                   : false
                 }
@@ -240,7 +238,6 @@ class SidebarContainer extends Component<Props> {
                 color="green"
                 style={{ color }}
               >
-                <Icon name="battery full" />
                 {(!settings.sidebarCollapsed)
                   ? 'Resources'
                   : false
@@ -254,7 +251,6 @@ class SidebarContainer extends Component<Props> {
                 color="red"
                 style={{ color }}
               >
-                <Icon name="external" />
                 {(!settings.sidebarCollapsed)
                   ? 'URI TESTS'
                   : false
@@ -268,7 +264,6 @@ class SidebarContainer extends Component<Props> {
                 color="grey"
                 style={{ color }}
               >
-                <Icon name="lab" />
                 {(!settings.sidebarCollapsed)
                   ? 'DevTests'
                   : false
@@ -293,10 +288,6 @@ class SidebarContainer extends Component<Props> {
                 color,
               }}
             >
-              <Icon
-                name="wrench"
-
-              />
               {(!settings.sidebarCollapsed)
                 ? <p>{t('tools')}</p>
                 : false

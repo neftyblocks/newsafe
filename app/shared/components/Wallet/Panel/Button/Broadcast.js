@@ -35,7 +35,6 @@ class WalletPanelButtonBroadcast extends Component<Props> {
             as="a"
             style={{ color }}
           >
-            <Icon name="wifi" size="large" />
             {(!settings.sidebarCollapsed)
               ? <p>{t('wallet_panel_button_broadcast_transaction')}</p>
               : false
