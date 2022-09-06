@@ -38,12 +38,18 @@ jobs:
         run: |
           echo 'GYP_MSVS_VERSION=2015' >> $Env:GITHUB_ENV
           echo 'GYP_MSVS_OVERRIDE_PATH=C:\\Dummy' >> $Env:GITHUB_ENV
-      - name: Install main packages. Some native modules might fail!
+      - name: Install packages
         run: yarn --frozen-lockfile
-      - run: yarn build-dll
-      - run: cd app && yarn --frozen-lockfile
-      - run: cd ..
-      - run: yarn ${{ matrix.cmd }}
+      - name: Build dll
+        run: yarn build-dll
+      - name: Install app dependencies
+        run: cd app && yarn --frozen-lockfile
+      - name: Build theme
+        run: |
+          cd semantic
+          npx gulp build
+      - name: Package app
+        run: yarn ${{ matrix.cmd }}
       - name: Archive artifacts
         uses: actions/upload-artifact@v3
         with:
