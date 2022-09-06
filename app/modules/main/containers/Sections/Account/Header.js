@@ -63,7 +63,7 @@ class AccountHeader extends Component<Props> {
               <Grid>
                 <Grid.Row>
                   <Grid.Column width={7} textAlign="center">
-                    <Header color={(warning) ? 'orange' : 'green'} size="large">
+                    <Header color={(warning) ? 'grey' : 'green'} size="large">
                       {(warning)
                         ? t(`global:global_resource_status_${warning}`)
                         : 'OK'

@@ -71,7 +71,7 @@ class OverviewSidebarBackupContainer extends Component<Props> {
     } = settings;
     const button = (
       <Button
-        color="purple"
+        color="black"
         content={t('main_sections_overview_sidebar_backup_button')}
         icon="save"
         onClick={this.backup}
@@ -81,7 +81,7 @@ class OverviewSidebarBackupContainer extends Component<Props> {
     if (buttonOnly) return button;
     return (
       <React.Fragment>
-        <Segment color="purple" textAlign="center">
+        <Segment color="grey" textAlign="center">
           <Header size="tiny">
             <Header.Subheader>
               {t('main_sections_overview_sidebar_backup_subheader')}

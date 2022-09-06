@@ -214,7 +214,7 @@ class WelcomeKeyContainer extends Component<Props> {
         break;
       }
       case 'watch': {
-        buttonColor = 'orange';
+        buttonColor = 'grey';
         buttonIcon = 'circle checkmark';
         buttonText = t('welcome_key_watchwallet');
         matching = false;

@@ -92,7 +92,7 @@ class PromptReviewControls extends Component<Props> {
         <Form.Field>
           {(mismatch)
             ? (
-              <Segment color="orange">
+              <Segment color="grey">
                 <Header>
                   Account not found
                   <Header.Subheader>

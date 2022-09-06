@@ -8,7 +8,7 @@ import { withTranslation } from 'react-i18next';
 import { Header, Icon, Image, Label, Menu } from 'semantic-ui-react';
 import { find } from 'lodash';
 
-import Logo from '../../../renderer/assets/images/newcoin.svg';
+import Logo from '../../../renderer/assets/images/newsafe_white.svg';
 
 import packageJson from '../../../package.json';
 import { clearSystemState } from '../../../shared/actions/system/systemstate';
@@ -98,7 +98,7 @@ class SidebarContainer extends Component<Props> {
             src={Logo}
             style={{
               display: 'inline-block',
-              width: ((settings.sidebarCollapsed) ? '2.5em' : '2.5em'),
+              width: ((settings.sidebarCollapsed) ? '4.5em' : '5.5em'),
             }}
           />
           {(!settings.sidebarCollapsed)
@@ -145,7 +145,7 @@ class SidebarContainer extends Component<Props> {
               }}
             >
               <Label
-                color="orange"
+                color="grey"
                 style={{
                   float: (settings.sidebarCollapsed) ? 'none' : 'right',
                   margin: 0,
@@ -263,7 +263,7 @@ class SidebarContainer extends Component<Props> {
                 active={module === 'devtest'}
                 onClick={this.onClick}
                 name="devtest"
-                color="orange"
+                color="grey"
                 style={{ color }}
               >
                 <Icon name="lab" />

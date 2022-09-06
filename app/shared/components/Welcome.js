@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Button, Container, Grid, Header, Icon, Image, Segment, Step } from 'semantic-ui-react';
 import { withTranslation } from 'react-i18next';
 
-import logo from '../../renderer/assets/images/newcoin.svg';
+import logo from '../../renderer/assets/images/newsafe_white.svg';
 import logoText from '../../renderer/assets/images/anchor-text.svg';
 import background from '../../renderer/assets/images/geometric-background.svg';
 

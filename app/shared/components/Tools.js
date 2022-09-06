@@ -192,7 +192,7 @@ class Tools extends Component<Props> {
               }
             </Form>
           </Segment>
-          <Segment padded color="orange">
+          <Segment padded color="grey">
             <Form>
               <Header dividing>
                 {t('tools_settings_header_developer')}
@@ -215,7 +215,7 @@ class Tools extends Component<Props> {
               </Form.Field>
             </Form>
           </Segment>
-          <Segment clearing padded color="orange">
+          <Segment clearing padded color="grey">
             <Header dividing>
               Danger Zone!
             </Header>

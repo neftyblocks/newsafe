@@ -92,7 +92,7 @@ class PromptHeader extends Component<Props> {
                         <Statistic size="small">
                           <Statistic.Value>
                             <Icon
-                              color="orange"
+                              color="grey"
                               name="warning sign"
                               size="small"
                               style={{ marginBottom: '0.15em' }}
