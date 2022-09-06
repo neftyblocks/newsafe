@@ -109,7 +109,7 @@ class GlobalBlockchainDropdown extends Component<Props> {
         }
         {(blockchain.testnet && !chainIds)
           ? (
-            <Label color="grey" content="Testnet" size="large" />
+            <Label color="black" content="Testnet" size="large" />
           )
           : false
         }
