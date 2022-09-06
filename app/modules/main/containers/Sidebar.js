@@ -91,7 +91,9 @@ class SidebarContainer extends Component<Props> {
             backgroundSize: 'contain',
             borderRadius: 0,
             color,
-            textAlign: 'center'
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1em',
           }}
         >
           <Image
@@ -103,7 +105,7 @@ class SidebarContainer extends Component<Props> {
           />
           {(!settings.sidebarCollapsed)
             ? (
-              <h1 style={{ color: 'white' }}>Newsafe</h1>
+              <h1 style={{ color: 'white', fontWeight: 'normal', margin: 0 }}>Newsafe</h1>
             )
             : false
           }
@@ -325,25 +327,7 @@ class SidebarContainer extends Component<Props> {
             />
           ) : false
         }
-        <Menu.Item
-          as="a"
-          onClick={this.toggleCollapsed}
-          style={{
-            color,
-          }}
-        >
-          <Icon
-            name={(settings.sidebarCollapsed) ? 'caret square right outline' : 'caret square left outline'}
-            size={(settings.sidebarCollapsed) ? 'large' : 'large'}
-            style={{
-              color,
-            }}
-          />
-          {(!settings.sidebarCollapsed)
-            ? <p>{t('minimize')}</p>
-            : false
-          }
-        </Menu.Item>
+
         <Menu.Item
           as="a"
           name="version"
