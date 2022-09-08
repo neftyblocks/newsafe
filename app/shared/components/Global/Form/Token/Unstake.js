@@ -122,7 +122,6 @@ export class GlobalFormTokenUnstake extends Component<Props> {
                 color="red"
                 disabled={!valid}
                 floated="right"
-                icon="circle minus"
                 onClick={this.onSubmit}
               />
             </Grid.Column>

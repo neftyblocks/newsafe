@@ -39,7 +39,6 @@ class GlobalButtonResetContainer extends Component<Props> {
         <Button
           content={t('tools_button_reset')}
           floated="right"
-          icon="trash"
           onClick={this.open}
         />
         <Confirm

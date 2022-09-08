@@ -31,7 +31,6 @@ class NavigationGovernanceContainer extends PureComponent<Props> {
           onClick={this.onClick}
           name="governance/producers"
         >
-          <Icon name="gavel" />
           {t('producers:producers_block_producers')}
         </Menu.Item>
         {(connection.supportedContracts && connection.supportedContracts.includes('proposals'))

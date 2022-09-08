@@ -55,7 +55,6 @@ class WalletPanelButtonStake extends Component<Props> {
           color: 'blue',
           content: t('stake_button_text', { chainSymbol: connection.chainSymbol }),
           fluid: true,
-          icon: 'microchip',
           disabled: disabled
         }}
         content={(
@@ -74,7 +73,6 @@ class WalletPanelButtonStake extends Component<Props> {
             validate={validate}
           />
         )}
-        icon="microchip"
         title={t('update_staked_coins')}
         settings={settings}
         system={system}

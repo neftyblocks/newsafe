@@ -33,7 +33,6 @@ class AccountOverviewRamBuy extends Component<Props> {
     const button = {
       color: 'blue',
       content: t('main_sections_overview_ram_buy_button'),
-      icon: 'plus circle',
       size: 'tiny',
     };
     if (!unlocked) {

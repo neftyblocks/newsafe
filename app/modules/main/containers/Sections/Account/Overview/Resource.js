@@ -280,7 +280,6 @@ class AccountOverviewResource extends Component<Props> {
                           color: 'blue',
                           content: t('main_sections_overview_resource_button_add'),
                           floated: 'left',
-                          icon: 'plus circle',
                           size: 'tiny'
                         }}
                         resource={resource}
@@ -290,7 +289,6 @@ class AccountOverviewResource extends Component<Props> {
                           color: 'red',
                           content: t('main_sections_overview_resource_button_remove'),
                           floated: 'right',
-                          icon: 'minus circle',
                           size: 'tiny'
                         }}
                         resource={resource}
