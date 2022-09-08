@@ -30,10 +30,9 @@ class AccountOverviewRamSell extends Component<Props> {
       unlocked,
     } = this.props;
     const button = {
-      color: 'red',
+      color: 'black',
       content: t('main_sections_overview_ram_sell_button'),
       floated: 'right',
-      icon: 'minus circle',
       size: 'tiny',
     };
     if (!unlocked) {

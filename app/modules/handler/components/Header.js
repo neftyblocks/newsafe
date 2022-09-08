@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import { Grid, Header, Icon, Image, Segment, Statistic, Step } from 'semantic-ui-react';
 
-import AnchorLogo from '../../../renderer/assets/images/anchor-logo-blue.svg';
+import NewsafeLogo from '../../../renderer/assets/images/newsafe_black.svg';
 
 import GlobalFragmentChainLogo from '../../../shared/components/Global/Fragment/ChainLogo';
 
@@ -57,7 +57,7 @@ class PromptHeader extends Component<Props> {
           <Grid.Column width={10}>
             <Header size="huge" style={{ marginTop: 0 }}>
               <Image
-                src={AnchorLogo}
+                src={NewsafeLogo}
                 style={{
                   marginRight: '0.25em',
                   marginTop: 0,

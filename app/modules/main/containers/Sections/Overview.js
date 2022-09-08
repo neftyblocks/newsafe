@@ -114,7 +114,7 @@ class OverviewContainer extends Component<Props> {
                 view={view}
                 viewChange={this.viewChange}
               />
-              <Segment color="green" style={{ marginTop: 0 }}>
+              <Segment color="grey" style={{ marginTop: 0 }}>
                 <Grid style={{ marginBottom: 0 }}>
                   <Grid.Row>
                     <Grid.Column width={13}>
