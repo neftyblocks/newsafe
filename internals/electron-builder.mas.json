@@ -1,6 +1,6 @@
 {
-  "appId": "com.greymass.anchordesktop.release",
-  "productName": "Anchor Wallet",
+  "appId": "org.newcoin.newsafedesktop.release",
+  "productName": "Newsafe Wallet",
   "artifactName": "${os}-${name}-${version}-${arch}.${ext}",
   "asar": true,
   "directories": {

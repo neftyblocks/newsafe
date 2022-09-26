@@ -34,15 +34,15 @@ export default class MenuBuilder {
 
   buildDarwinTemplate() {
     const subMenuAbout = {
-      label: 'Anchor',
+      label: 'Newsafe',
       submenu: [
         { role: 'about' },
         { type: 'separator' },
-        { label: 'Hide Anchor Window', accelerator: 'Command+H', selector: 'hide:' },
+        { label: 'Hide Newsafe Window', accelerator: 'Command+H', selector: 'hide:' },
         { label: 'Hide Others', accelerator: 'Command+Shift+H', selector: 'hideOtherApplications:' },
         { label: 'Show All', selector: 'unhideAllApplications:' },
         { type: 'separator' },
-        { label: 'Quit Anchor', accelerator: 'Command+Q', click: () => { app.quit(); } }
+        { label: 'Quit Newsafe', accelerator: 'Command+Q', click: () => { app.quit(); } }
       ]
     };
     const subMenuEdit = {
@@ -113,7 +113,7 @@ export default class MenuBuilder {
           this.mainWindow.close();
         }
       }, {
-        label: '&Exit Anchor',
+        label: '&Exit Newsafe',
         accelerator: 'Ctrl+Q',
         click: () => {
           app.quit();
