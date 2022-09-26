@@ -43,8 +43,8 @@ const initialState = {
   contacts: [],
   // Custom tokens the wallet should be tracking
   customTokens: [
-    // Always track the EOS token
-    'eos-mainnet:eosio.token:EOS'
+    // TRACK GNCO TOKEN
+    'add7deb61981d83563f2c09f266acbfa48153f14453639b4a6259c4c8225d0e7:pool.nco:GNCO',
   ],
   // Unique ID for this wallet
   deviceId: uuid(),

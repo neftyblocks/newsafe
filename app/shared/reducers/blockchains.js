@@ -102,7 +102,7 @@ const supportedContracts = [
   {
     // newcoin-testnet
     chainId: 'add7deb61981d83563f2c09f266acbfa48153f14453639b4a6259c4c8225d0e7',
-    supportedContracts: ['atomicassets', 'market.nefty'],
+    supportedContracts: ['atomicassets', 'pools2.nco', 'pool.nco'],
   },
 ];
 

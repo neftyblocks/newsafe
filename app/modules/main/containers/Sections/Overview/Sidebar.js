@@ -36,10 +36,10 @@ class OverviewSidebarContainer extends Component<Props> {
             {t('main_sections_overview_sidebar_subheader')}
           </Header.Subheader>
         </Header>
-        <GlobalSidebarUpdate
+        {/* <GlobalSidebarUpdate
           constants={constants}
           settings={settings}
-        />
+        /> */}
         <OverviewSidebarBackupContainer />
         <GlobalSidebarSupport />
       </React.Fragment>
