@@ -120,7 +120,6 @@ class SidebarContainer extends Component<Props> {
               onClick={this.onClick}
               name=""
               style={{
-                backgroundColor: (!module) ? background : '',
                 color,
               }}
             >
@@ -143,7 +142,6 @@ class SidebarContainer extends Component<Props> {
               onClick={this.onClick}
               name="pending"
               style={{
-                backgroundColor: (!module) ? background : '',
                 color,
               }}
             >
@@ -179,7 +177,6 @@ class SidebarContainer extends Component<Props> {
                 onClick={this.onClick}
                 name="wallet"
                 style={{
-                  backgroundColor: (module && module.startsWith('wallet')) ? background : '',
                   color,
                 }}
               >
@@ -196,7 +193,6 @@ class SidebarContainer extends Component<Props> {
                     onClick={this.onClick}
                     name={`account/${settings.account}`}
                     style={{
-                      backgroundColor: (module && module.startsWith('account')) ? background : '',
                       color,
                     }}
                   >
@@ -214,7 +210,6 @@ class SidebarContainer extends Component<Props> {
                 onClick={this.onClick}
                 name="governance/producers"
                 style={{
-                  backgroundColor: (module && module.startsWith('governance')) ? background : '',
                   color,
                 }}
               >
@@ -284,7 +279,6 @@ class SidebarContainer extends Component<Props> {
               onClick={this.onClick}
               name="tools"
               style={{
-                backgroundColor: (module && module.startsWith('tools')) ? background : '',
                 color,
               }}
             >
