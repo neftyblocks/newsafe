@@ -169,7 +169,8 @@ export function setURI(uri) {
         }
       };
       // Catch old signing requests during v1 -> v2 spec upgrade
-      const modified = uri.replace('eosio:', 'esr:');
+      let modified = uri.replace('eosio:', 'esr:');
+      modified = uri.replace('esr-anchor:', 'esr:');
       // Interpret the Signing Request
       const request = SigningRequest.from(modified, opts);
       const req = JSON.parse(JSON.stringify(request.data.req));
@@ -190,9 +191,9 @@ export function setURI(uri) {
         const chainIds = request.getChainIds();
         const accountChains = wallets.map(w => w.chainId);
         // Find the first chainId matching the request that is enabled
-        const matchingRequest = chainIds.filter((chain) =>
+        const matchingRequest = chainIds && chainIds.filter((chain) =>
           accountChains.includes(chain.toString()));
-        [chainId] = matchingRequest;
+        chainId = (matchingRequest || accountChains)[0];
       } else {
         chainId = request.getChainId();
       }
@@ -371,7 +372,7 @@ export function signIdentityRequest(
             callbackParams.payload = {
               ...callbackParams.payload,
               link_ch: `https://${sessions.linkUrl}/${sessions.linkId}`,
-              link_key: PrivateKey.from(sessions.requestKey).toPublic().toString(),
+              link_key: PrivateKey.fromString(sessions.requestKey, true).toPublic().toString(),
               link_name: 'Anchor Desktop',
             };
             const session = {

@@ -299,7 +299,7 @@ class SidebarContainer extends Component<Props> {
         {(
           settings.walletInit
           && settings.chainId
-          && !inSetup
+          && (!inSetup || (inSetup && settings.advancedOptions))
         )
           ? (
             <WalletPanelButtonBroadcast
