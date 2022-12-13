@@ -45,6 +45,7 @@
       "Categories": "Network;",
       "MimeType": "application/x-esr;x-scheme-handler/esr;application/x-anchor;x-scheme-handler/anchor;"
     },
+    "executableArgs": ["--no-sandbox"],
     "icon": "app/renderer/assets/icons/png",
     "publish": {
       "provider": "github"
