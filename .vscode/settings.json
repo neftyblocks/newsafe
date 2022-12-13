@@ -16,5 +16,6 @@
     "npm-debug.log.*": true,
     "test/**/__snapshots__": true,
     "yarn.lock": true
-  }
+  },
+  "svg.preview.background": "transparent"
 }

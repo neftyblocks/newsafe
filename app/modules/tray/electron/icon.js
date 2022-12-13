@@ -6,7 +6,7 @@ const log = require('electron-log');
 const createTrayIcon = (resourcePath, menu) => {
   log.info('creating tray menu');
 
-  const trayIcon = path.join(resourcePath, 'renderer/assets/icons/png/32x32@2x.png');
+  const trayIcon = path.join(resourcePath, 'renderer/assets/icons/png/32x32Template.png');
   log.info(trayIcon);
 
   const tray = new Tray(trayIcon);
