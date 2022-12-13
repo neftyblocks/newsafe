@@ -21,6 +21,7 @@ import uxLogo from '../../../../renderer/assets/images/ux.png';
 import worbliLogo from '../../../../renderer/assets/images/worbli.png';
 import waxLogo from '../../../../renderer/assets/images/wax.png';
 import newcoinLogo from '../../../../renderer/assets/images/newcoin_black.svg';
+import libreLogo from "../../../../renderer/assets/images/libre.png"; //libre
 
 const logos = {
   'b912d19a6abd2b1b05611ae5be473355d64d95aeff0c09bedc8c166cd6468fe4': beosLogo, // mainnet (beos)
@@ -48,6 +49,8 @@ const logos = {
   '1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4': waxLogo, // mainnet (wax)
   'f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12': waxLogo,
   'add7deb61981d83563f2c09f266acbfa48153f14453639b4a6259c4c8225d0e7': newcoinLogo, // testnet (newcoin)
+  '38b1d7815474d0c60683ecbea321d723e83f5da6ae5f1c1f9fecc69d9ba96465': libreLogo, // mainnet (libre)
+  'b64646740308df2ee06c6b72f34c0f7fa066d940e831f752db2006fcc2b78dee': libreLogo // testnet (libre)
 };
 
 export class GlobalFragmentChainLogo extends PureComponent<Props> {

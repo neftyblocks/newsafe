@@ -1,8 +1,7 @@
 import fetch from 'node-fetch';
 import { find } from 'lodash';
 
-import { Bytes, KeyType, PrivateKey, Checksum256 } from '@greymass/eosio';
-import { Base64u } from 'eosio-signing-request';
+import { Bytes, KeyType, PublicKey, PrivateKey } from '@greymass/eosio';
 import { CreateRequest } from '@greymass/account-creation';
 
 import EOSAccount from '../../../shared/utils/EOS/Account';
@@ -60,8 +59,6 @@ export function beginAccountCreate(url) {
     const [, data] = url.split(':');
 
     const request = CreateRequest.from(data);
-    const codeHash = request.scope && Checksum256.hash(Bytes.from(request.code, 'utf8')).hexString;
-    const callbackUrl = codeHash && `https://cb.anchor.link/${codeHash}`;
 
     try {
       const response = await apiRequest('/tickets/verify', {
@@ -78,8 +75,7 @@ export function beginAccountCreate(url) {
             ...json,
             blockchain,
             code: request.code,
-            scope: request.scope,
-            callbackUrl,
+            loginRequest: request.loginRequest.toString(),
           }
         });
       }
@@ -149,13 +145,38 @@ export function createAccount(code, chainId, accountName, activeKey, ownerKey) {
 
 export function createWallet(chainId, accountName, activeKey, isLedger = false) {
   return async (dispatch: () => void, getState) => {
-    const { ledger, settings } = getState();
+    const { ledger, settings, storage } = getState();
     // Determine the wallet mode (hot vs ledger)
     let mode = 'hot';
     let path;
     if (isLedger) {
       mode = 'ledger';
       ({ path } = ledger);
+    }
+    // Check to ensure we're using the right key
+    const { blockchains } = getState();
+    const blockchain = find(blockchains, { chainId });
+    const { httpClient } = await createHttpHandler({});
+    const result = await httpClient.post(`${blockchain.node}/v1/chain/get_account`, {
+      account_name: accountName,
+      cachebreak: Date.now()
+    });
+    const accountObj = new EOSAccount(result.data);
+    const permission = accountObj.getPermission('active');
+    let publicKey;
+    permission.required_auth.keys.forEach((key) => {
+      if (key.weight === 1) {
+        const pubkey = PublicKey.from(key.key).toLegacyString(blockchain.chainSymbol);
+        if (storage.keys.includes(pubkey)) {
+          publicKey = pubkey;
+        }
+      }
+    });
+    if (publicKey !== activeKey) {
+      console.error(`Specified active key doesn't equal public key. Public: ${publicKey}, Active: ${activeKey}`);
+    }
+    if (!publicKey) {
+      console.error(`Couldn't automatically import key: ${activeKey}`);
     }
     // Create the wallet definition
     dispatch(importWallet(chainId, accountName, 'active', false, false, mode, activeKey, path));
@@ -285,7 +306,15 @@ export function returnKeyCertificateDecrypted(cert) {
       }
       return dispatch({
         type: types.ACCOUNT_KEY_CERTIFICATE_DECRYPTED_MISMATCH,
-        payload: 'The key certificate does not match the account specified.'
+        payload: {
+          account: cert.account,
+          auth,
+          blockchain: cert.blockchain.chainId,
+          data: result.data.permissions,
+          message: 'The key certificate does not match the account specified.',
+          publicKey: cert.publicKey,
+          server: cert.blockchain.node,
+        }
       });
     }
     return dispatch({
