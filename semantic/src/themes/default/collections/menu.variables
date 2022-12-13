@@ -165,7 +165,7 @@
 ---------------*/
 
 /* Hovered Item */
-@hoverItemBackground: @subtleTransparentBlack;
+@hoverItemBackground: @background;
 @hoverItemTextColor: @selectedTextColor;
 
 /* Pressed Item */
@@ -174,14 +174,14 @@
 
 
 /* Active Item */
-@activeItemBackground: @transparentBlack;
+@activeItemBackground: @background;
 @activeItemTextColor: @selectedTextColor;
 @activeItemFontWeight: @normal;
 @activeIconOpacity: 1;
 @activeItemBoxShadow: none;
 
 /* Active Hovered Item */
-@activeHoverItemBackground: @transparentBlack;
+@activeHoverItemBackground: @background;
 @activeHoverItemColor: @selectedTextColor;
 
 /* Selected Dropdown */

@@ -93,7 +93,7 @@ span.nil {
 }
 
 .ui.vertical.menu.nav-sidebar {
-  background: black !important;
+  background: #ffffff !important;
   border: none;
   border-right: 1px solid rgba(34, 36, 38, 0.15);
   border-radius: 0;
@@ -107,6 +107,30 @@ span.nil {
 
 .ui.vertical.menu.nav-sidebar > .item {
   border: none;
+}
+
+.ui.vertical.menu.nav-sidebar > .item > p {
+  font-size: 25px;
+  line-height: 1.3;
+  display: inline-block;
+  position: relative;
+}
+
+/* I want an animated underline when item is hovered */
+.ui.vertical.menu.nav-sidebar > .item > p::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: #000000;
+  height: 1px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.ui.vertical.menu.nav-sidebar > .item:hover > p::before,
+.ui.vertical.menu.nav-sidebar > .item.active > p::before {
+  width: 100%;
 }
 
 .ui.vertical.menu.nav-sidebar > .item img {

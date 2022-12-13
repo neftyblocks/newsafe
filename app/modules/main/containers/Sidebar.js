@@ -8,7 +8,7 @@ import { withTranslation } from 'react-i18next';
 import { Header, Icon, Image, Label, Menu } from 'semantic-ui-react';
 import { find } from 'lodash';
 
-import Logo from '../../../renderer/assets/images/newsafe_white.svg';
+import Logo from '../../../renderer/assets/images/newsafe_black.svg';
 
 import packageJson from '../../../package.json';
 import { clearSystemState } from '../../../shared/actions/system/systemstate';
@@ -44,8 +44,8 @@ class SidebarContainer extends Component<Props> {
     const {
       module
     } = navigation;
-    const background = '#131B33';
-    const color = 'rgba(255, 255, 255, 0.7)';
+    const background = '#ffffff';
+    const color = '#000000';
     // const devMode = process.env.NODE_ENV !== 'production';
     const devMode = false;
     const inSetup = (
@@ -71,7 +71,6 @@ class SidebarContainer extends Component<Props> {
       <Menu
         animation="overlay"
         className="nav-sidebar"
-        inverted
         icon={settings.sidebarCollapsed}
         pointing
         style={{
@@ -105,12 +104,6 @@ class SidebarContainer extends Component<Props> {
               width: ((settings.sidebarCollapsed) ? '4.5em' : '3.5em'),
             }}
           />
-          {(!settings.sidebarCollapsed)
-            ? (
-              <h1 style={{ color: 'white', fontWeight: 'normal', margin: 0 }}>Newsafe</h1>
-            )
-            : false
-          }
         </Menu.Item>
         {(!inSetup || (inSetup && settings.advancedOptions))
           ? (
@@ -297,7 +290,8 @@ class SidebarContainer extends Component<Props> {
           }}
         />
         {(
-          settings.walletInit
+          false 
+          && settings.walletInit
           && settings.chainId
           && (!inSetup || (inSetup && settings.advancedOptions))
         )
