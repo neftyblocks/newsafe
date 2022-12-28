@@ -71,10 +71,8 @@ class PromptContainer extends Component<Props> {
     const { actions, prompt } = this.props;
     actions.clearURI();
     const w = remote.getCurrentWindow();
-    alert(`on close: ${JSON.stringify(prompt.callback)}`);
     if (prompt.callback) {
       w.close();
-      w.show();
     } else {
       w.hide();
     }

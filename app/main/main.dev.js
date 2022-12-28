@@ -1,7 +1,7 @@
 /* eslint global-require: 0, flowtype-errors/show-errors: 0 */
 
 import '@babel/polyfill';
-import { app, crashReporter, ipcMain, protocol } from 'electron';
+import { app, ipcMain, protocol } from 'electron';
 import { configureStore } from '../shared/store/main/configureStore';
 import { createInterface } from '../modules/main/electron';
 import { createTray } from '../modules/tray/electron';
