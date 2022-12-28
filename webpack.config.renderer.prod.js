@@ -43,6 +43,9 @@ export default merge(baseConfig, {
       'regenerator-runtime/runtime',
       path.join(__dirname, 'app/modules/main/index'),
     ],
+    apps: [
+      path.join(__dirname, 'app/modules/apps/index'),
+    ],
   },
 
   output: {

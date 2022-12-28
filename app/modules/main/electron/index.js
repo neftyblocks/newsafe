@@ -1,4 +1,4 @@
-import { BrowserWindow } from 'electron';
+import { app, BrowserWindow } from 'electron';
 import MenuBuilder from '../../../shared/electron/menu';
 import packageJson from '../../../package.json';
 
@@ -72,7 +72,9 @@ const createInterface = (resourcePath, route = '/', closable = true, store, uri 
         action: 'allow',
         overrideBrowserWindowOptions: {
           webPreferences: {
-            preload: path.join(__dirname, '../containers/Sections/Apps/appHandler.js'),
+            preload: (process.env.HOT)
+              ? path.join(__dirname, '../../apps/index.js')
+              : path.join(app.getAppPath(), 'dist/renderer.apps.prod.js'),
           }
         }
       };
