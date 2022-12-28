@@ -15,6 +15,7 @@ import GovernanceContainer from './Sections/Governance';
 import HomeContainer from './Sections/Home';
 import PendingContainer from './Sections/Pending';
 import ResourceProvidersContainer from './Sections/ResourceProviders';
+import AppsContainer from './Sections/Apps';
 import TestsContainer from './Sections/Tests';
 import ToolsContainer from './Sections/Tools';
 import SettingsContainer from './Sections/Settings';
@@ -36,6 +37,7 @@ class ContentContainer extends Component<Props> {
           <Route path="/tests" component={TestsContainer} />
           <Route path="/wallet" component={WalletContainer} />
           <Route path="/governance" component={GovernanceContainer} />
+          <Route path="/apps" component={AppsContainer} />
           <Route path="/rps" component={ResourceProvidersContainer} />
           <Route path="/tools" component={ToolsContainer} />
           <Route path="/settings" component={SettingsContainer} />

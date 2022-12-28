@@ -265,6 +265,8 @@ const enableSigningRequests = () => {
   app.setAsDefaultProtocolClient('esr');
   protocol.registerHttpProtocol('esr', (req, cb) => {
     log.info('protocol handler: register', req, cb);
+    log.info('handling now...');
+    handleUri(resourcePath, store, mainWindow, pHandler, req.url);
   });
   app.setAsDefaultProtocolClient('esr-anchor');
   protocol.registerHttpProtocol('esr-anchor', (req, cb) => {

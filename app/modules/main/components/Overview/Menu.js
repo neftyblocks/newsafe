@@ -17,7 +17,7 @@ class OverviewMenu extends Component<Props> {
       t,
     } = this.props;
     return (
-      <Menu pointing secondary size="small">
+      <Menu className="newsafe-menu" pointing secondary size="small">
         <Menu.Item
           active={view === 'systemtokens'}
           content={t('main_components_overview_menu_item_one')}

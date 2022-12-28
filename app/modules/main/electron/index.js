@@ -66,6 +66,22 @@ const createInterface = (resourcePath, route = '/', closable = true, store, uri 
     }
   });
 
+  ui.webContents.setWindowOpenHandler(details => {
+    if (details.url.startsWith('https://newocean.xyz')) {
+      return {
+        action: 'allow',
+        overrideBrowserWindowOptions: {
+          webPreferences: {
+            preload: path.join(__dirname, '../containers/Sections/Apps/appHandler.js'),
+          }
+        }
+      };
+    }
+    return {
+      action: 'allow',
+    };
+  });
+
   const menuBuilder = new MenuBuilder(ui);
   menuBuilder.buildMenu();
 

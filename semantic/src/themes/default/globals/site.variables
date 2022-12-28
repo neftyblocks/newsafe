@@ -44,20 +44,20 @@
 /* See Power-user section below
    for explanation of @px variables
 */
-@relativeBorderRadius: @relative4px;
-@absoluteBorderRadius: @4px;
+@relativeBorderRadius: 0;
+@absoluteBorderRadius: 0;
 
-@defaultBorderRadius: @absoluteBorderRadius;
+@defaultBorderRadius: 0;
 
 /*-------------------
     Brand Colors
 --------------------*/
 
-@primaryColor        : @blue;
+@primaryColor        : @black;
 @secondaryColor      : @black;
 
-@lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightBlack;
+@lightPrimaryColor   : @black;
+@lightSecondaryColor : @black;
 
 /* Whenever a color needs to get calculated (screen()/multiply()) out of a base color */
 @blendingBaseColor: #cccccc;
