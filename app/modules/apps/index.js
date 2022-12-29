@@ -1,8 +1,16 @@
+let retries = 10;
 function start() {
   const walletAnchor = document.querySelector('.connect-wallet');
   if (walletAnchor) {
     walletAnchor.click();
+    console.log('login button clicked');
     clickOnLoginOnAppear();
+  } else if (retries > 0) {
+    retries -= 1;
+    console.log(`retrying click on login button, retries left ${retries}`);
+    window.setTimeout(start, 100);
+  } else {
+    console.log('failed to click on login button');
   }
 }
 
