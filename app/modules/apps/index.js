@@ -1,4 +1,4 @@
-let retries = 10;
+let retries = 2 * 10;
 function start() {
   const walletAnchor = document.querySelector('.connect-wallet');
   if (walletAnchor) {
@@ -8,7 +8,7 @@ function start() {
   } else if (retries > 0) {
     retries -= 1;
     console.log(`retrying click on login button, retries left ${retries}`);
-    window.setTimeout(start, 100);
+    window.setTimeout(start, 500);
   } else {
     console.log('failed to click on login button');
   }
