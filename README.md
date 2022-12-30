@@ -11,10 +11,10 @@
 | Overview | The overview        | [app/modules/main/containers/Sections/Overview.js](app/modules/main/containers/Sections/Overview.js)      |
 | Overview | The overview menu   | [app/modules/main/components/Overview/Menu.js](app/modules/main/components/Overview/Menu.js)              |
 | Wallet   | The wallet content  | [app/modules/main/containers/Sections/Wallet.js](app/modules/main/containers/Sections/Wallet/Transfer.js) |
-
+| Apps     | The apps content    | [app/modules/main/containers/Sections/Apps.js](app/modules/main/containers/Sections/Apps.js)              |
 
 ## Apps
-* Script injection for apps happens at [app/modules/main/electron/index.js](app/modules/main/electron/index.js)
 
-* Script injected is [app/modules/apps/index.js](app/modules/apps/index.js)
+- Script injection for apps happens at [app/modules/main/electron/index.js](app/modules/main/electron/index.js)
 
+- Script injected is [app/modules/apps/index.js](app/modules/apps/index.js)
