@@ -107,7 +107,6 @@ class MenuContainer extends Component<Props> {
         attached
         style={{
           border: 'none',
-          borderBottom: '1px solid #d4d4d5',
           margin: 0,
           minHeight: '4.428em',
         }}
@@ -126,16 +125,10 @@ class MenuContainer extends Component<Props> {
             />
           </Modal.Content>
         </Modal>
-
         <GlobalBlockchainDropdown
           onNavigationChange={this.props.actions.changeModule}
         />
-        <GlobalAccountDropdown
-          onNavigationChange={this.props.actions.changeModule}
-          style={{
-            minWidth: '15em'
-          }}
-        />
+
         <Menu.Menu position="right">
           <GlobalAppDisconnected
             trigger={(
@@ -153,15 +146,8 @@ class MenuContainer extends Component<Props> {
           <WalletMode
             settings={settings}
           />
-          <WalletLockState
-            actions={actions}
-            key="lockstate"
-            locked={locked}
-            pubkeys={pubkeys}
-            validate={validate}
-            wallet={wallet}
-          />
-          <GlobalHardwareLedgerStatus />
+          {/* <GlobalHardwareLedgerStatus /> */}
+
           <Menu.Item
             as="a"
             active={module === 'settings'}
@@ -171,6 +157,24 @@ class MenuContainer extends Component<Props> {
           >
             <Icon name="settings" />
           </Menu.Item>
+
+          <WalletLockState
+            actions={actions}
+            key="lockstate"
+            locked={locked}
+            pubkeys={pubkeys}
+            validate={validate}
+            wallet={wallet}
+          />
+
+          <GlobalAccountDropdown
+            onNavigationChange={this.props.actions.changeModule}
+            style={{
+              minWidth: '15em'
+            }}
+          />
+
+
         </Menu.Menu>
       </Menu>
     );

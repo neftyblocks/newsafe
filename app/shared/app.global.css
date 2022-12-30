@@ -92,9 +92,15 @@ span.nil {
   z-index: 1001;
 }
 
+.ui.menu.nav-topbar .item:before,
+.ui.menu.nav-topbar .item:after {
+  visibility: hidden;
+}
+
 .ui.vertical.menu.nav-sidebar {
   background: #ffffff !important;
   border: none;
+  box-shadow: none;
   border-right: 1px solid rgba(34, 36, 38, 0.15);
   border-radius: 0;
   color: rgba(255, 255, 255, 0.7);
@@ -140,10 +146,39 @@ span.nil {
 .ui.vertical.pointing.menu.nav-sidebar .active.item:after {
   background: #f1f0ee !important;
 }
+.ui.pointing.menu .active.item:after {
+  visibility: hidden!important;
+}
 
 .ui.vertical.menu.nav-sidebar .ui.tiny.basic.icon.button:focus,
 .ui.vertical.menu.nav-sidebar .ui.tiny.basic.icon.button:hover {
   background: transparent !important;
+}
+
+.ui.secondary.pointing.menu.newsafe-menu {
+  border-bottom: none;
+}
+.ui.secondary.pointing.menu.newsafe-menu .item {
+  border-bottom: none;
+}
+
+.ui.secondary.pointing.menu.newsafe-menu .item {
+  border-bottom: 1px solid black;
+}
+.ui.secondary.pointing.menu.newsafe-menu .item.active {
+  border-bottom: none;
+  border-top: 1px solid black;
+}
+.ui.secondary.pointing.menu.newsafe-menu .item.active:not(:first-child) {
+  border-left: 1px solid black;
+}
+.ui.secondary.pointing.menu.newsafe-menu .item.active:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+/* Wallet segment */
+.transfer-container .ui.segment {
+  padding: 0;
 }
 
 .table tbody.visible.transition {

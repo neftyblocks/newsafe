@@ -115,6 +115,7 @@
     "scrypt-async": "2.0.1",
     "scrypt-js": "^3.0.1",
     "sjcl": "1.0.7",
+    "styled-components": "^5.3.6",
     "uuid": "^8.3.0"
   },
   "devDependencies": {

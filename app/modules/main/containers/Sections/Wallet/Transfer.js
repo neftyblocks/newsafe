@@ -116,7 +116,7 @@ class WalletTransferContainer extends Component<Props> {
         <Grid stackable>
           <Grid.Row>
             <Grid.Column width={(hasTransaction || isConfirming) ? 16 : 10}>
-              <Segment color="blue" piled>
+              <Segment color="blue" className="transfer-container" style={{ border: 'none', boxShadow: 'none' }}>
                 <Header>
                   {t('main_sections_wallet_transfer_header')}
                   <Header.Subheader>

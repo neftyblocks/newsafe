@@ -57,7 +57,8 @@ const createProtocolHandlers = (resourcePath, store, request = false) => {
   // TODO: Needs proper hide/close logic independent of the primary ui
   ui.on('close', (e) => {
     if (ui.isVisible()) {
-      if (isMac && Menu.sendActionToFirstResponder) {
+      const isAppOpen = BrowserWindow.getAllWindows().some(window => window.title.includes('Newocean'));
+      if (isMac() && Menu.sendActionToFirstResponder && !isAppOpen) {
         Menu.sendActionToFirstResponder('hide:');
       }
       store.dispatch(clearURI());

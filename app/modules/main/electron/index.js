@@ -1,4 +1,4 @@
-import { BrowserWindow } from 'electron';
+import { app, BrowserWindow } from 'electron';
 import MenuBuilder from '../../../shared/electron/menu';
 import packageJson from '../../../package.json';
 
@@ -64,6 +64,24 @@ const createInterface = (resourcePath, route = '/', closable = true, store, uri 
     if (uri && pHandler) {
       handleUri(resourcePath, store, ui, pHandler, uri);
     }
+  });
+
+  ui.webContents.setWindowOpenHandler(details => {
+    if (details.url.startsWith('https://newocean.xyz')) {
+      return {
+        action: 'allow',
+        overrideBrowserWindowOptions: {
+          webPreferences: {
+            preload: (process.env.HOT)
+              ? path.join(__dirname, '../../apps/index.js')
+              : path.join(app.getAppPath(), 'dist/renderer.apps.prod.js'),
+          }
+        }
+      };
+    }
+    return {
+      action: 'allow',
+    };
   });
 
   const menuBuilder = new MenuBuilder(ui);

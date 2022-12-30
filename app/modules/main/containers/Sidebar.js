@@ -199,6 +199,20 @@ class SidebarContainer extends Component<Props> {
               }
               <Menu.Item
                 as="a"
+                active={module && module.startsWith('apps')}
+                onClick={this.onClick}
+                name="apps"
+                style={{
+                  color,
+                }}
+              >
+                {(!settings.sidebarCollapsed)
+                  ? <p>{t('apps')}</p>
+                  : false
+                }
+              </Menu.Item>
+              {/* <Menu.Item
+                as="a"
                 active={module && module.startsWith('governance')}
                 onClick={this.onClick}
                 name="governance/producers"
@@ -210,7 +224,7 @@ class SidebarContainer extends Component<Props> {
                   ? <p>{t('governance')}</p>
                   : false
                 }
-              </Menu.Item>
+              </Menu.Item> */}
             </React.Fragment>
           )
           : false
