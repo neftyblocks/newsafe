@@ -6,9 +6,15 @@ const log = require('electron-log');
 const createTrayIcon = (resourcePath, menu) => {
   log.info('creating tray menu');
 
-  const trayIcon = process.platform === 'darwin'
-    ? path.join(resourcePath, 'renderer/assets/icons/png/32x32Template.png')
-    : path.join(resourcePath, 'renderer/assets/icons/png/32x32.png');
+  let trayIcon = null;
+  if (process.platform === 'darwin') {
+    trayIcon = path.join(resourcePath, 'renderer/assets/icons/png/32x32Template.png');
+  } else if (process.platform === 'win32') {
+    trayIcon = path.join(resourcePath, 'renderer/assets/icons/win/icon.ico');
+  } else {
+    trayIcon = path.join(resourcePath, 'renderer/assets/icons/png/256x256.png');
+  }
+
   log.info(trayIcon);
 
   const tray = new Tray(trayIcon);
