@@ -199,6 +199,20 @@ class SidebarContainer extends Component<Props> {
               }
               <Menu.Item
                 as="a"
+                active={module && module.startsWith('badges')}
+                onClick={this.onClick}
+                name="badges"
+                style={{
+                  color,
+                }}
+              >
+                {(!settings.sidebarCollapsed)
+                  ? <p>{t('badges')}</p>
+                  : false
+                }
+              </Menu.Item>
+              <Menu.Item
+                as="a"
                 active={module && module.startsWith('apps')}
                 onClick={this.onClick}
                 name="apps"

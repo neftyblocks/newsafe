@@ -1,5 +1,6 @@
 import { clone, find, keys, map, omit, pickBy } from 'lodash';
 import eos from '../actions/helpers/eos';
+import { handleNewcoinUri } from './newcoin/newcoinUri';
 
 const { screen } = require('electron');
 
@@ -49,6 +50,8 @@ export default async function handleUri(resourcePath, store, mainWindow, pHandle
     pHandler.focus();
     pHandler.setVisibleOnAllWorkspaces(false);
   }
+
+  handleNewcoinUri(url, mainWindow);
 
   // For the current version, just prompt and don't process whitelist (code above)
   // The code below the return is not yet production ready.
