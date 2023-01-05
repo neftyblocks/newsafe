@@ -12,6 +12,8 @@ import UpdaterContainer from '../../../shared/containers/Root/Updater';
 import MessageAppError from '../../../shared/components/Global/Message/App/Error';
 
 import '../../../shared/app.global.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
 
 export default class Root extends Component<Props> {
   state = {};
@@ -36,17 +38,19 @@ export default class Root extends Component<Props> {
       </I18nextProvider>
     ) : (
       <Provider store={store}>
-        <I18nextProvider i18n={i18n}>
-          <IdleContainer>
-            <UpdaterContainer>
-              <ConnectedRouter history={this.props.history} store={this.props.store}>
-                <ScrollToTop>
-                  <Routes />
-                </ScrollToTop>
-              </ConnectedRouter>
-            </UpdaterContainer>
-          </IdleContainer>
-        </I18nextProvider>
+        <QueryClientProvider client={new QueryClient()}>
+          <I18nextProvider i18n={i18n}>
+            <IdleContainer>
+              <UpdaterContainer>
+                <ConnectedRouter history={this.props.history} store={this.props.store}>
+                  <ScrollToTop>
+                    <Routes />
+                  </ScrollToTop>
+                </ConnectedRouter>
+              </UpdaterContainer>
+            </IdleContainer>
+          </I18nextProvider>
+        </QueryClientProvider>
       </Provider>
     );
   }

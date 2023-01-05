@@ -122,7 +122,7 @@ app.on('ready', async () => {
     uri = process.argv && process.argv.slice(1)[0];
   }
   if (uri) {
-    if (uri.startsWith('esr') || uri.startsWith('anchorcreate')) {
+    if (uri.startsWith('esr') || uri.startsWith('anchorcreate') || uri.startsWith('newcoin')) {
       setTimeout(() => {
         handleUri(resourcePath, store, mainWindow, pHandler, uri);
       }, 2000);

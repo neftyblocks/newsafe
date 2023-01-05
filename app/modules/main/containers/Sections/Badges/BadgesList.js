@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useQuery } from 'react-query';
 import styled from 'styled-components';
 import badge from '../../../../../../resources/apps/badge-sample.jpeg';
 
@@ -36,26 +38,53 @@ const BadgeDescription = styled.p`
   font-weight: 400;
 `;
 
-export default class BadgesList extends Component<Props> {
-  render() {
-    return (
-      <Container>
-        <BadgeContainer>
-          <BadgeImage src={badge} alt="Badge image" />
-          <BadgeTitle>10 DAO proposals</BadgeTitle>
-          <BadgeDescription>Jan 1, 2023</BadgeDescription>
-        </BadgeContainer>
-        <BadgeContainer>
-          <BadgeImage src={badge} alt="Badge image" />
-          <BadgeTitle>10 DAO proposals</BadgeTitle>
-          <BadgeDescription>Jan 1, 2023</BadgeDescription>
-        </BadgeContainer>
-        <BadgeContainer>
-          <BadgeImage src={badge} alt="Badge image" />
-          <BadgeTitle>10 DAO proposals</BadgeTitle>
-          <BadgeDescription>Jan 1, 2023</BadgeDescription>
-        </BadgeContainer>
-      </Container>
-    );
+const BadgesList = () => {
+  const account = useSelector(state => state.settings.account);
+  const { isLoading, data, error } = useQuery(`badges-account-${account}`, async () => {
+    const result = await fetch(`https://api.newgra.ph/v1/user/badge/list?username=${account}`);
+    if (result.status === 404) {
+      return [];
+    }
+    if (!result.ok) {
+      throw new Error('Error fetching badges');
+    }
+    const { value } = await result.json();
+    return value;
+  });
+
+  console.log('badges account: ', account);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
-}
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (data.length === 0) {
+    return <div>No badges for you :(</div>;
+  }
+
+  return (
+    <Container>
+      <BadgeContainer>
+        <BadgeImage src={badge} alt="Badge image" />
+        <BadgeTitle>10 DAO proposals</BadgeTitle>
+        <BadgeDescription>Jan 1, 2023</BadgeDescription>
+      </BadgeContainer>
+      <BadgeContainer>
+        <BadgeImage src={badge} alt="Badge image" />
+        <BadgeTitle>10 DAO proposals</BadgeTitle>
+        <BadgeDescription>Jan 1, 2023</BadgeDescription>
+      </BadgeContainer>
+      <BadgeContainer>
+        <BadgeImage src={badge} alt="Badge image" />
+        <BadgeTitle>10 DAO proposals</BadgeTitle>
+        <BadgeDescription>Jan 1, 2023</BadgeDescription>
+      </BadgeContainer>
+    </Container>
+  );
+};
+
+export default BadgesList;

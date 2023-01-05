@@ -4,6 +4,7 @@
 
 | Section  | Description                  | Location                                                                                                  |
 | -------- | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
+| General  | Main entry point             | [app/modules/main/index.js](app/modules/main/index.js)                                                    |
 | General  | Main router                  | [app/modules/main/containers/Content.js](app/modules/main/containers/Content.js)                          |
 | General  | General menu                 | [app/modules/main/containers/Menu.js](app/modules/main/containers/Menu.js)                                |
 | General  | General sidebar              | [app/modules/main/containers/Sections/General.js](app/modules/main/containers/Sidebar.js)                 |
