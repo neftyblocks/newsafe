@@ -109,7 +109,7 @@ class SidebarContainer extends Component<Props> {
           ? (
             <Menu.Item
               as="a"
-              active={(!module)}
+              active={(!module || module === 'home')}
               onClick={this.onClick}
               name=""
               style={{
@@ -197,6 +197,20 @@ class SidebarContainer extends Component<Props> {
                 )
                 : false
               }
+              <Menu.Item
+                as="a"
+                active={module && module.startsWith('swap')}
+                onClick={this.onClick}
+                name="swap"
+                style={{
+                  color,
+                }}
+              >
+                {(!settings.sidebarCollapsed)
+                  ? <p>{t('swap')}</p>
+                  : false
+                }
+              </Menu.Item>
               <Menu.Item
                 as="a"
                 active={module && module.startsWith('badges')}
