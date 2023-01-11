@@ -39,7 +39,7 @@ const SwapTokenChoose = () => {
       {data ? (
         <TokensGrid>
           {data.map((token) => (
-            <TokenContainer key={token.code}>
+            <TokenContainer key={token.id}>
               <button onClick={() => onClick(token.code)}>
                 <h2>${token.code}</h2>
                 <p>Owned by: {token.owner}</p>
