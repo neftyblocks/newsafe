@@ -4,6 +4,12 @@ import { useQuery } from 'react-query';
 import styled from 'styled-components';
 import badge from '../../../../../../resources/apps/badge-sample.jpeg';
 
+// TODO: return date in format "Jan 1, 2023"
+const formatDate = (isoString) => {
+  const date = new Date(isoString);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
 const BadgesList = () => {
   const account = useSelector(state => state.settings.account);
   const { isLoading, data, error } = useQuery(`badges-account-${account}`, async () => {
@@ -32,21 +38,13 @@ const BadgesList = () => {
 
   return (
     <Container>
-      <BadgeContainer>
-        <img src={badge} alt="Badge" />
-        <p className="badge-title">10 DAO proposals</p>
-        <p className="badge-description">Jan 1, 2023</p>
-      </BadgeContainer>
-      <BadgeContainer>
-        <img src={badge} alt="Badge" />
-        <p className="badge-title">10 DAO proposals</p>
-        <p className="badge-description">Jan 1, 2023</p>
-      </BadgeContainer>
-      <BadgeContainer>
-        <img src={badge} alt="Badge" />
-        <p className="badge-title">10 DAO proposals</p>
-        <p className="badge-description">Jan 1, 2023</p>
-      </BadgeContainer>
+      {data.map(badgeItem => (
+        <BadgeContainer key={badgeItem.id}>
+          <img src={badge} alt="Badge" />
+          <p className="badge-title">{badgeItem.title}</p>
+          <p className="badge-description">{formatDate(badgeItem.created)}</p>
+        </BadgeContainer>
+      ))}
     </Container>
   );
 };
