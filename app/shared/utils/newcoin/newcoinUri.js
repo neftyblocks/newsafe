@@ -21,7 +21,11 @@ export function handleNewcoinUri(uriString, mainWindow) {
 }
 
 export function registerIpcNewcoinEvents(store) {
-    ipcRenderer.on('swapTokens', (event, ) => {
-        store.dispatch(changeModule('badges'));
+    ipcRenderer.on('swapTokens', (event, { from, to }) => {
+        if (to && from) {
+            store.dispatch(changeModule(`swap/${from}/${to}`));
+        } else {
+            store.dispatch(changeModule('swap'));
+        }
     });
 }
