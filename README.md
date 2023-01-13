@@ -20,3 +20,12 @@
 - Script injection for apps happens at [app/modules/main/electron/index.js](app/modules/main/electron/index.js)
 
 - Script injected is [app/modules/apps/index.js](app/modules/apps/index.js)
+
+
+## Swap
+In order to swap, you can make use of the newcoin schema:
+```
+newcoin:swap?from=TKN1&to=TKN2
+
+```
+Where TKN1 and TKN2 are the tokens you want to swap. The tokens are the token symbol.
