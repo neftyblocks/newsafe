@@ -4,6 +4,62 @@ import app1 from '../../../../../../resources/apps/sample2.png';
 
 const { shell } = require('electron');
 
+const AppsList = () => {
+  const onClick = (event, url) => {
+    event.preventDefault();
+    shell.openExternal(url);
+  };
+
+  return (
+    <Container>
+      <AppContainer>
+        <a href="https://newocean.xyz" target="_blank" rel="noopener noreferrer">
+          <AppImage src={app1} />
+          <AppBanner>
+            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
+              <use xlinkHref="#newocean_logo" />
+            </AppLogo>
+            <p><span>Newocean</span> is a markteplace for curated digital art drops</p>
+          </AppBanner>
+        </a>
+      </AppContainer>
+      <AppContainer>
+        <button onClick={e => onClick(e, 'https://newlife.io')}>
+          <AppImage src={app1} />
+          <AppBanner>
+            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
+              <use xlinkHref="#newocean_logo" />
+            </AppLogo>
+            <p><span>Newlife</span></p>
+          </AppBanner>
+        </button>
+      </AppContainer>
+      <AppContainer>
+        <button onClick={e => onClick(e, 'https://www.newforum.xyz')}>
+          <AppImage src={app1} />
+          <AppBanner>
+            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
+              <use xlinkHref="#newocean_logo" />
+            </AppLogo>
+            <p><span>Newforum</span></p>
+          </AppBanner>
+        </button>
+      </AppContainer>
+      <AppContainer>
+        <button onClick={e => onClick(e, 'https://www.new.foundation')}>
+          <AppImage src={app1} />
+          <AppBanner>
+            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
+              <use xlinkHref="#newocean_logo" />
+            </AppLogo>
+            <p><span>Newfoundation</span></p>
+          </AppBanner>
+        </button>
+      </AppContainer>
+    </Container>
+  );
+};
+
 const Container = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -69,61 +125,5 @@ const AppLogo = styled.svg`
   border-radius: 10px;
   flex-shrink: 0;
 `;
-
-const AppsList = () => {
-  const onClick = (event, url) => {
-    event.preventDefault();
-    shell.openExternal(url);
-  };
-
-  return (
-    <Container>
-      <AppContainer>
-        <a href="https://newocean.xyz" target="_blank" rel="noopener noreferrer">
-          <AppImage src={app1} />
-          <AppBanner>
-            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
-              <use xlinkHref="#newocean_logo" />
-            </AppLogo>
-            <p><span>Newocean</span> is a markteplace for curated digital art drops</p>
-          </AppBanner>
-        </a>
-      </AppContainer>
-      <AppContainer>
-        <button onClick={e => onClick(e, 'https://newlife.io')}>
-          <AppImage src={app1} />
-          <AppBanner>
-            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
-              <use xlinkHref="#newocean_logo" />
-            </AppLogo>
-            <p><span>Newlife</span></p>
-          </AppBanner>
-        </button>
-      </AppContainer>
-      <AppContainer>
-        <button onClick={e => onClick(e, 'https://www.newforum.xyz')}>
-          <AppImage src={app1} />
-          <AppBanner>
-            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
-              <use xlinkHref="#newocean_logo" />
-            </AppLogo>
-            <p><span>Newforum</span></p>
-          </AppBanner>
-        </button>
-      </AppContainer>
-      <AppContainer>
-        <button onClick={e => onClick(e, 'https://www.new.foundation')}>
-          <AppImage src={app1} />
-          <AppBanner>
-            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
-              <use xlinkHref="#newocean_logo" />
-            </AppLogo>
-            <p><span>Newfoundation</span></p>
-          </AppBanner>
-        </button>
-      </AppContainer>
-    </Container>
-  );
-};
 
 export default AppsList;
