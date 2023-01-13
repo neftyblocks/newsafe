@@ -1,21 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import app1 from '../../../../../../resources/apps/sample2.png';
 
-const Container = styled.div`
+const { shell } = require('electron');
+
+const Container = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
   margin: 0 auto;
 `;
 
-const AppContainer = styled.a`
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  overflow: hidden;
+const AppContainer = styled.li`
   height: 320px;
-  position: relative;
+  list-style: none;
+  padding: 0;
+  
+  a, button {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    width: 100%;
+  }
+
+  span {
+    font-weight: bold;
+  }
+
 `;
 
 // this image is the background of its container
@@ -51,24 +70,60 @@ const AppLogo = styled.svg`
   flex-shrink: 0;
 `;
 
-const Bold = styled.span`
-  font-weight: bold;
-`;
+const AppsList = () => {
+  const onClick = (event, url) => {
+    event.preventDefault();
+    shell.openExternal(url);
+  };
 
-export default class AppsList extends Component<Props> {
-  render() {
-    return (
-      <Container>
-        <AppContainer href="https://newocean.xyz" target="_blank">
+  return (
+    <Container>
+      <AppContainer>
+        <a href="https://newocean.xyz" target="_blank" rel="noopener noreferrer">
           <AppImage src={app1} />
           <AppBanner>
             <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
               <use xlinkHref="#newocean_logo" />
             </AppLogo>
-            <p><Bold>Newocean</Bold> is a markteplace for curated digital art drops</p>
+            <p><span>Newocean</span> is a markteplace for curated digital art drops</p>
           </AppBanner>
-        </AppContainer>
-      </Container>
-    );
-  }
-}
+        </a>
+      </AppContainer>
+      <AppContainer>
+        <button onClick={e => onClick(e, 'https://newlife.io')}>
+          <AppImage src={app1} />
+          <AppBanner>
+            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
+              <use xlinkHref="#newocean_logo" />
+            </AppLogo>
+            <p><span>Newlife</span></p>
+          </AppBanner>
+        </button>
+      </AppContainer>
+      <AppContainer>
+        <button onClick={e => onClick(e, 'https://www.newforum.xyz')}>
+          <AppImage src={app1} />
+          <AppBanner>
+            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
+              <use xlinkHref="#newocean_logo" />
+            </AppLogo>
+            <p><span>Newforum</span></p>
+          </AppBanner>
+        </button>
+      </AppContainer>
+      <AppContainer>
+        <button onClick={e => onClick(e, 'https://www.new.foundation')}>
+          <AppImage src={app1} />
+          <AppBanner>
+            <AppLogo xmlns="http://www.w3.org/2000/svg" aria-label="Newocean logo">
+              <use xlinkHref="#newocean_logo" />
+            </AppLogo>
+            <p><span>Newfoundation</span></p>
+          </AppBanner>
+        </button>
+      </AppContainer>
+    </Container>
+  );
+};
+
+export default AppsList;
