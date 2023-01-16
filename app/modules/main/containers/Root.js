@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import i18n from '../../../shared/i18n';
 import IdleContainer from '../../../shared/containers/Root/Idle';
@@ -12,7 +13,6 @@ import UpdaterContainer from '../../../shared/containers/Root/Updater';
 import MessageAppError from '../../../shared/components/Global/Message/App/Error';
 
 import '../../../shared/app.global.css';
-import { QueryClient, QueryClientProvider } from 'react-query';
 
 
 export default class Root extends Component<Props> {
@@ -28,6 +28,8 @@ export default class Root extends Component<Props> {
     });
   }
 
+  queryClient = new QueryClient();
+
   render() {
     const { error } = this.state;
     const Routes = this.props.routes;
@@ -38,7 +40,7 @@ export default class Root extends Component<Props> {
       </I18nextProvider>
     ) : (
       <Provider store={store}>
-        <QueryClientProvider client={new QueryClient()}>
+        <QueryClientProvider client={this.queryClient}>
           <I18nextProvider i18n={i18n}>
             <IdleContainer>
               <UpdaterContainer>
