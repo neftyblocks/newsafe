@@ -122,7 +122,7 @@ app.on('ready', async () => {
     uri = process.argv && process.argv.slice(1)[0];
   }
   if (uri) {
-    if (uri.startsWith('esr') || uri.startsWith('anchorcreate')) {
+    if (uri.startsWith('esr') || uri.startsWith('anchorcreate') || uri.startsWith('newcoin')) {
       setTimeout(() => {
         handleUri(resourcePath, store, mainWindow, pHandler, uri);
       }, 2000);
@@ -135,7 +135,7 @@ app.on('activate', (e, hasVisibleWindows) => {
 });
 app.on('open-url', (e, url) => {
   if (pHandler) {
-    if (url.startsWith('esr') || url.startsWith('anchorcreate')) {
+    if (url.startsWith('esr') || url.startsWith('anchorcreate') || url.startsWith('newcoin')) {
       handleUri(resourcePath, store, mainWindow, pHandler, url);
     }
   } else {
@@ -280,6 +280,12 @@ const enableSigningRequests = () => {
   protocol.registerHttpProtocol('anchorcreate', (req, cb) => {
     log.info('app handler: register', req, cb);
   });
+
+  // newcoin
+  app.setAsDefaultProtocolClient('newcoin');
+  protocol.registerHttpProtocol('newcoin', (req, cb) => {
+    log.info('app handler: register', req, cb);
+  });
 };
 
 const disableSigningRequests = () => {
@@ -292,6 +298,8 @@ const disableSigningRequests = () => {
   protocol.unregisterProtocol('anchor');
   app.removeAsDefaultProtocolClient('anchorcreate');
   protocol.unregisterProtocol('anchorcreate');
+  app.removeAsDefaultProtocolClient('newcoin');
+  protocol.unregisterProtocol('newcoin');
 };
 
 function showMain() {

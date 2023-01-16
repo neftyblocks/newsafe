@@ -177,7 +177,7 @@ span.nil {
 }
 
 /* Wallet segment */
-.transfer-container .ui.segment {
+.transfer-container .ui.form .ui.segment {
   padding: 0;
 }
 

@@ -16,6 +16,8 @@ import HomeContainer from './Sections/Home';
 import PendingContainer from './Sections/Pending';
 import ResourceProvidersContainer from './Sections/ResourceProviders';
 import AppsContainer from './Sections/Apps';
+import SwapContainer from './Sections/Swap';
+import BadgesContainer from './Sections/Badges';
 import TestsContainer from './Sections/Tests';
 import ToolsContainer from './Sections/Tools';
 import SettingsContainer from './Sections/Settings';
@@ -37,7 +39,9 @@ class ContentContainer extends Component<Props> {
           <Route path="/tests" component={TestsContainer} />
           <Route path="/wallet" component={WalletContainer} />
           <Route path="/governance" component={GovernanceContainer} />
+          <Route path="/swap" component={SwapContainer} />
           <Route path="/apps" component={AppsContainer} />
+          <Route path="/badges" component={BadgesContainer} />
           <Route path="/rps" component={ResourceProvidersContainer} />
           <Route path="/tools" component={ToolsContainer} />
           <Route path="/settings" component={SettingsContainer} />

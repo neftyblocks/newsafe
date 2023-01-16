@@ -26,6 +26,13 @@
       "schemes": [
         "anchor", "esr", "anchorcreate", "esr-anchor"
       ]
+    },
+    {
+      "name": "newcoin",
+      "role": "Viewer",
+      "schemes": [
+        "newcoin"
+      ]
     }
   ],
   "publish": {
@@ -43,7 +50,7 @@
       "Terminal": "false",
       "StartupNotify": "false",
       "Categories": "Network;",
-      "MimeType": "application/x-esr;x-scheme-handler/esr;application/x-anchor;x-scheme-handler/anchor;"
+      "MimeType": "application/x-esr;x-scheme-handler/esr;application/x-anchor;x-scheme-handler/anchor;application/x-newcoin;x-scheme-handler/newcoin;"
     },
     "executableArgs": ["--no-sandbox"],
     "icon": "app/renderer/assets/icons/png",

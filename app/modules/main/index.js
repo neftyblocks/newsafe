@@ -18,6 +18,7 @@ import {
   returnNewAccountKeys,
 } from './actions/account';
 import { downloadProgress, listPrinters } from '../../shared/actions/app';
+import { registerIpcNewcoinEvents } from '../../shared/utils/newcoin/newcoinUri';
 
 const { store } = configureStore();
 const { ipcRenderer } = require('electron');
@@ -75,3 +76,5 @@ ipcRenderer.on('returnNewAccountKeys', (
 ipcRenderer.on('downloadProgress', (event, data) => {
   store.dispatch(downloadProgress(data));
 });
+
+registerIpcNewcoinEvents(store);
