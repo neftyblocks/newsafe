@@ -75,7 +75,7 @@ export const swapTokens = async (account, poolId, amount, connection) => {
       memo: `pool:${poolId}`,
     },
   };
-  console.log('action', action);
+
   const signer = eos(connection, true, true);
   return signer.transact({ actions: [action] }, {
     broadcast: connection.broadcast,

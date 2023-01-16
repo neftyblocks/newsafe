@@ -4,7 +4,6 @@ import { useQuery } from 'react-query';
 import styled from 'styled-components';
 import badge from '../../../../../../resources/apps/badge-sample.jpeg';
 
-// TODO: return date in format "Jan 1, 2023"
 const formatDate = (isoString) => {
   const date = new Date(isoString);
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
@@ -82,7 +81,7 @@ const BadgeContainer = styled.li`
     font-weight: 400;
   }
 `;
-// should be min-height: 200px and center the content
+
 const MessageContainer = styled.div`
   display: flex;
   flex-direction: column;
