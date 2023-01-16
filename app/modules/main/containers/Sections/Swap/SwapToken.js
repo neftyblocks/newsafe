@@ -30,7 +30,7 @@ const SwapToken = (props) => {
   const onSwap = () => mutate({ amount: value });
 
   const [value, setValue] = React.useState(100);
-  const percentage = Math.floor((value / accountBalance) * 100);
+  const percentage = accountBalance ? Math.floor((value / (accountBalance)) * 100) : 0;
   const fee = value * 0.17;
   const toReceive = (value - fee).toFixed(4);
 

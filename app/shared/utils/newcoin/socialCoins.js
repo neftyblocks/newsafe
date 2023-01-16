@@ -56,6 +56,9 @@ export const getSocialCoin = async (connection, code) => {
 export const getCurrencyBalance = async (account, connection) => {
   const { rpc } = eos(connection, false, true);
   const [response] = await rpc.get_currency_balance('pool.nco', account, 'GNCO');
+  if (!response) {
+    return 0;
+  }
   const [balance] = response.split(' ');
   return +balance;
 };
