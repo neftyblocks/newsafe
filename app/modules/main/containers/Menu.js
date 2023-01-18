@@ -109,6 +109,8 @@ class MenuContainer extends Component<Props> {
           border: 'none',
           margin: 0,
           minHeight: '4.428em',
+          background: 'rgba(255,255,255,0.3)',
+          backdropFilter: 'blur(10px)',
         }}
       >
         <Modal

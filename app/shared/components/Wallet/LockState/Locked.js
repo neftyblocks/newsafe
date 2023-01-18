@@ -58,6 +58,8 @@ export default class WalletLockStateLocked extends Component<Props> {
           <Popup
             content="The wallet is currently locked. Click this menu item and enter its password to unlock it."
             inverted
+            position="top left"
+            horizontalOffset={-15}
             trigger={(
               <Menu.Item
                 color="yellow"

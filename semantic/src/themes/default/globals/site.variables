@@ -259,7 +259,7 @@
 
 /*---   Neutrals  ---*/
 @fullBlack        : #000000;
-@offWhite         : #F9FAFB;
+@offWhite         : #FEFEFE;
 @darkWhite        : #F3F4F5;
 @midWhite         : #DCDDDE;
 @white            : #FFFFFF;
@@ -732,9 +732,9 @@
 
 @circularRadius                : 500rem;
 
-@borderColor               : rgba(34, 36, 38, 0.15);
+@borderColor               : rgba(242, 242, 242, 1);
 @strongBorderColor         : rgba(34, 36, 38, 0.22);
-@internalBorderColor       : rgba(34, 36, 38, 0.1);
+@internalBorderColor       : rgba(242, 242, 242, 1);
 @selectedBorderColor       : rgba(34, 36, 38, 0.35);
 @strongSelectedBorderColor : rgba(34, 36, 38, 0.5);
 @disabledBorderColor       : rgba(34, 36, 38, 0.5);
