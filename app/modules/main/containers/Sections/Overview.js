@@ -105,16 +105,16 @@ class OverviewContainer extends Component<Props> {
         <Grid stackable>
           <Grid.Row>
             <Grid.Column width={12}>
-              {/* <Header
+              <Header
                 content={t('main_sections_overview_grid_header')}
                 subheader={t('main_sections_overview_grid_subheader')}
-              /> */}
-              <OverviewMenu
+              />
+              {/* <OverviewMenu
                 stakedResources={stakedResources}
                 view={view}
                 viewChange={this.viewChange}
-              />
-              <Segment color="grey" style={{ marginTop: 0, border: 'none', boxShadow: 'none' }}>
+              /> */}
+              <Segment color="grey" style={{ marginTop: '4em', border: 'none', boxShadow: 'none', padding: 0 }}>
                 <Grid style={{ marginBottom: 0 }}>
                   <Grid.Row>
                     <Grid.Column width={13}>
@@ -212,7 +212,7 @@ class OverviewContainer extends Component<Props> {
                 </Container>
               </Segment>
             </Grid.Column>
-            <Grid.Column width={4}>
+            <Grid.Column width={12} style={{ marginTop: '4em' }}>
               <OverviewSidebarContainer />
             </Grid.Column>
           </Grid.Row>

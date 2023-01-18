@@ -27,7 +27,7 @@ import WalletMode from '../../../shared/components/Wallet/Mode';
 
 import makeGetKeysUnlocked from '../../../shared/selectors/getKeysUnlocked';
 
-class MenuContainer extends Component<Props> {
+class BottomMenuContainer extends Component<Props> {
   state = {
     showSettings: false
   }
@@ -111,30 +111,42 @@ class MenuContainer extends Component<Props> {
           minHeight: '4.428em',
         }}
       >
-        <Modal
-          closeIcon
-          onClose={this.hideSettings}
-          open={showSettings}
-        >
-          <Modal.Header>
-            Anchor Settings
-          </Modal.Header>
-          <Modal.Content style={{ padding: 0 }}>
-            <SettingsContainer
-              onReset={this.hideSettings}
-            />
-          </Modal.Content>
-        </Modal>
-
         <Menu.Menu position="right">
-          <GlobalAccountDropdown
-            onNavigationChange={this.props.actions.changeModule}
-            style={{
-              minWidth: '15em'
-            }}
+          <GlobalAppDisconnected
+            trigger={(
+              <Menu.Item
+                as="a"
+                content={(
+                  <Icon.Group size="large">
+                    <Icon color="red" name="wifi" />
+                    <Icon color="red" corner="bottom right" name="exclamation" />
+                  </Icon.Group>
+                )}
+              />
+            )}
           />
-          <GlobalBlockchainDropdown
-            onNavigationChange={this.props.actions.changeModule}
+          <WalletMode
+            settings={settings}
+          />
+          <GlobalHardwareLedgerStatus />
+
+          <Menu.Item
+            as="a"
+            active={module === 'settings'}
+            onClick={this.showSettings}
+            name="settings"
+            color="pink"
+          >
+            <Icon name="settings" />
+          </Menu.Item>
+
+          <WalletLockState
+            actions={actions}
+            key="lockstate"
+            locked={locked}
+            pubkeys={pubkeys}
+            validate={validate}
+            wallet={wallet}
           />
         </Menu.Menu>
       </Menu>
@@ -177,4 +189,4 @@ function mapDispatchToProps(dispatch) {
 export default withRouter(connect(
   makeMapStateToProps,
   mapDispatchToProps
-)(MenuContainer));
+)(BottomMenuContainer));

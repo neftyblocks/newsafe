@@ -10,7 +10,7 @@ class OverviewSidebarSupport extends PureComponent<Props> {
   render() {
     const { t } = this.props;
     return (
-      <Segment attached="top" color="grey" textAlign="center">
+      <Segment color="grey" textAlign="center">
         <Header size="tiny">
           <Header.Subheader>
             {t('main_components_overview_sidebar_support_subheader')}
