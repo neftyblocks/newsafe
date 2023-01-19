@@ -73,15 +73,14 @@ span.nil {
 }
 
 .ui.table.overview {
-  border: 1px solid rgba(34, 36, 38, 0.15);
+  border: 1px solid rgba(248,248,248,1);
   border-left: 0;
 }
 
 .ui.table.overview thead tr th:first-child:not(.ignored),
 .ui.table.overview tbody tr td:first-child:not(.ignored) {
-  background: rgb(248, 248, 248);
-  border-left: 1px solid rgba(34, 36, 38, 0.1);
-  border-right: 1px solid rgba(34, 36, 38, 0.1);
+  border-left: 1px solid rgba(248,248,248,1);
+  border-right: 1px solid rgba(248,248,248,1);
   position: -webkit-sticky;
   position: sticky;
   left: 0;

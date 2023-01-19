@@ -10,7 +10,7 @@ const SwapTokenChoose = () => {
   const connection = useSelector((state) => state.connection);
   const [handle, setHandle] = useState(null);
   const [input, setInput] = useState('');
-  const { data } = useQuery(['tokens', input, connection], () => getSocialCoins(input, connection));
+  const { data, isLoading, isError, isSuccess } = useQuery(['tokens', input, connection], () => getSocialCoins(input, connection));
 
   const onChange = (e) => {
     if (handle) {
@@ -36,7 +36,13 @@ const SwapTokenChoose = () => {
         <input type="text" placeholder="Search..." onChange={onChange} />
         <i className="search icon" />
       </div>
-      {data ? (
+      {isLoading ? (
+        <Message>Loading...</Message>
+      ) : null}
+      {isError ? (
+        <Message error>Error loading tokens</Message>
+      ) : null}
+      {isSuccess && (data || !input) ? (
         <TokensGrid>
           {data.map((token) => (
             <TokenContainer key={token.id}>
@@ -47,6 +53,9 @@ const SwapTokenChoose = () => {
             </TokenContainer>
           ))}
         </TokensGrid>
+      ) : null}
+      {isSuccess && input && (!data || !data.length) ? (
+        <Message>No tokens found</Message>
       ) : null}
     </div>
   );
@@ -76,6 +85,15 @@ const TokenContainer = styled.li`
   h2 {
     margin: 0;
   }
+`;
+
+const Message = styled.p`
+  color: ${props => (props.error ? 'red' : '#000000')};
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
 `;
 
 export default SwapTokenChoose;

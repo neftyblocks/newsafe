@@ -27,6 +27,8 @@ class WalletLockState extends Component<Props> {
       <Popup
         content={t('wallet_lock_state_popup')}
         inverted
+        position="top left"
+        horizontalOffset={-15}
         trigger={(
           <Menu.Item
             color="yellow"

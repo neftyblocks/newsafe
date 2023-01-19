@@ -162,7 +162,7 @@
 ;
 
 /* Striped */
-@stripedBackground: rgba(0, 0, 50, 0.02);
+@stripedBackground: rgba(254,254,254,1);
 @invertedStripedBackground: rgba(255, 255, 255, 0.05);
 
 /* Selectable */

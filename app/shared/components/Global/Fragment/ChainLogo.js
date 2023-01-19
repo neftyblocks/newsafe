@@ -20,7 +20,7 @@ import telosLogo from '../../../../renderer/assets/images/telos.png';
 import uxLogo from '../../../../renderer/assets/images/ux.png';
 import worbliLogo from '../../../../renderer/assets/images/worbli.png';
 import waxLogo from '../../../../renderer/assets/images/wax.png';
-import newcoinLogo from '../../../../renderer/assets/images/newcoin_black.svg';
+import newcoinLogo from '../../../../renderer/assets/images/newcoin_h.svg';
 import libreLogo from "../../../../renderer/assets/images/libre.png"; //libre
 
 const logos = {

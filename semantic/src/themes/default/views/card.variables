@@ -52,7 +52,7 @@
 
 
 /* Image */
-@imageBackground: @transparentBlack;
+@imageBackground: @transparentWhite;
 @imagePadding: 0;
 @imageBorder: none;
 @imageBoxShadow: none;

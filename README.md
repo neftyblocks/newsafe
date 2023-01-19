@@ -5,6 +5,7 @@
 | Section  | Description                  | Location                                                                                                  |
 | -------- | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
 | General  | Main entry point             | [app/modules/main/index.js](app/modules/main/index.js)                                                    |
+| General  | Main layout                  | [app/modules/main/containers/Index.js](app/modules/main/containers/Index.js)                              |
 | General  | Main router                  | [app/modules/main/containers/Content.js](app/modules/main/containers/Content.js)                          |
 | General  | General menu                 | [app/modules/main/containers/Menu.js](app/modules/main/containers/Menu.js)                                |
 | General  | General sidebar              | [app/modules/main/containers/Sections/General.js](app/modules/main/containers/Sidebar.js)                 |
@@ -21,11 +22,13 @@
 
 - Script injected is [app/modules/apps/index.js](app/modules/apps/index.js)
 
-
 ## Swap
+
 In order to swap, you can make use of the newcoin schema:
+
 ```
 newcoin:swap?from=TKN1&to=TKN2
 
 ```
+
 Where TKN1 and TKN2 are the tokens you want to swap. The tokens are the token symbol.

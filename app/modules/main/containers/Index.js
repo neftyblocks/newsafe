@@ -9,6 +9,7 @@ import Either from 'eitherx';
 import ContentContainer from './Content';
 import ContentErrorContainer from './ContentError';
 import MenuContainer from './Menu';
+import BottomMenuContainer from './BottomMenu';
 import SidebarContainer from './Sidebar';
 
 import { setWalletMode } from '../../../shared/actions/wallet';
@@ -111,7 +112,18 @@ class MainIndexContainer extends Component<Props> {
             <MenuContainer />
           </div>
           <div style={{
-            padding: '1.25em'
+            position: 'fixed',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            zIndex: 999,
+          }}
+          >
+            <BottomMenuContainer />
+          </div>
+          <div style={{
+            padding: '1.25em',
+            paddingBottom: '5em'
           }}
           >
             <Either

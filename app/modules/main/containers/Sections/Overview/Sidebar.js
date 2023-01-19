@@ -12,6 +12,7 @@ import { setSetting } from '../../../../../shared/actions/settings';
 import OverviewSidebarBackupContainer from './Sidebar/Backup';
 import GlobalSidebarSupport from '../../../components/Overview/Sidebar/Support';
 import GlobalSidebarUpdate from '../../../components/Overview/Sidebar/Update';
+import styled from 'styled-components';
 
 class OverviewSidebarContainer extends Component<Props> {
   componentDidUpdate(prevProps) {
@@ -40,8 +41,10 @@ class OverviewSidebarContainer extends Component<Props> {
           constants={constants}
           settings={settings}
         /> */}
-        <OverviewSidebarBackupContainer />
-        <GlobalSidebarSupport />
+        <BoxesContainer>
+          <OverviewSidebarBackupContainer />
+          <GlobalSidebarSupport />
+        </BoxesContainer>
       </React.Fragment>
     );
   }
@@ -63,6 +66,17 @@ function mapDispatchToProps(dispatch) {
     }, dispatch)
   };
 }
+
+const BoxesContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+
+  .ui.segment {
+    margin: 0;
+  }
+`
+
 
 export default compose(
   withTranslation('main'),

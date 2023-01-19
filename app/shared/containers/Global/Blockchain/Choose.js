@@ -61,33 +61,35 @@ class GlobalBlockchainChoose extends Component<Props> {
     const featured = blockchains.filter(b => featuredChains.includes(b.chainId));
     // TODO: choose
     return (
-      <Segment style={{ marginTop: 0 }}>
+      <Segment basic style={{ marginTop: 0 }}>
         <Header
           content={t('global_blockchain_choose_header')}
           subheader={t('global_blockchain_choose_subheader')}
           size="large"
           style={{ marginTop: 0 }}
         />
-        <Segment basic padded="very" textAlign="center">
+        <div>
           <Card.Group style={{
               'align-items': 'center',
-              'justify-content': 'center',
+              'justify-content': 'flex-start',
+              'text-align': 'center',
+              marginTop: '1em',
             }}
           >
             {featured.map(blockchain => (
               <Card
                 onClick={() => this.onSwap(blockchain.chainId)}
-                raised
-                style={{ width: 'auto' }}
+                style={{ width: 'auto', borderRadius: '4px' }}
               >
                 <GlobalFragmentChainLogo
                   chainId={blockchain.chainId}
                   noPopup
                   style={{
-                    width: '96px'
+                    width: '96px',
+                    margin: '2em auto 1em'
                   }}
                 />
-                <Card.Content>
+                <Card.Content style={{ borderTop: 'none', textAlign: 'start' }}>
                   <Card.Header>{blockchain.name}</Card.Header>
                 </Card.Content>
               </Card>
@@ -121,7 +123,7 @@ class GlobalBlockchainChoose extends Component<Props> {
               />
             </Form.Field>
           </Form> */}
-        </Segment>
+        </div>
       </Segment>
     );
   }
