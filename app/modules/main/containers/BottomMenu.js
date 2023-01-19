@@ -112,6 +112,20 @@ class BottomMenuContainer extends Component<Props> {
         }}
       >
         <Menu.Menu position="right">
+          <Modal
+            closeIcon
+            onClose={this.hideSettings}
+            open={showSettings}
+          >
+            <Modal.Header>
+              Anchor Settings
+            </Modal.Header>
+            <Modal.Content style={{ padding: 0 }}>
+              <SettingsContainer
+                onReset={this.hideSettings}
+              />
+            </Modal.Content>
+          </Modal>
           <GlobalAppDisconnected
             trigger={(
               <Menu.Item

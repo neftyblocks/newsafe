@@ -15,7 +15,7 @@ import { setWalletMode } from '../../../../../shared/actions/wallet';
 
 import WelcomeImportContainer from '../../../../../shared/containers/Welcome/Import';
 import GlobalModalAccountImportCert from '../../../../../shared/containers/Global/Account/Import/Cert';
-import LogoText from '../../../../../renderer/assets/images/anchor-text-blue.svg';
+import LogoText from '../../../../../renderer/assets/icons/newsafe_icon.svg';
 
 class HomeInitializeContainer extends Component<Props> {
   state = {
@@ -62,23 +62,22 @@ class HomeInitializeContainer extends Component<Props> {
       advancedOptions
     } = this.state;
     return (
-      <React.Fragment>
+      <div style={{ marginTop: '-1.7em' }}>
         <Segment
           basic
           style={{ margin: 0 }}
           textAlign="center"
         >
-          {/* <Image
+          <Image
             alt="Newsafe"
             centered
             src={LogoText}
             style={{
-              margin: '2em auto 1em',
-              width: '192px',
+              margin: '0 auto 1em',
+              width: '120px',
             }}
-          /> */}
-          <h1>Newsafe</h1>
-          <p>{t('main_sections_home_initialize_paragraph_one')}</p>
+          />
+          <p style={{ maxWidth: '400px', margin: '0 auto' }}>{t('main_sections_home_initialize_paragraph_one')}</p>
         </Segment>
         <Segment basic textAlign="center" style={{ margin: 0 }}>
           <p style={{ margin: '1em auto 3em' }}>
@@ -143,7 +142,7 @@ class HomeInitializeContainer extends Component<Props> {
             }
           </Card>
         </Segment>
-      </React.Fragment>
+      </div>
     );
   }
 }
